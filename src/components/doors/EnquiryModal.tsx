@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { supabase } from '@/lib/supabase';
+import { captureLead } from '@/lib/leads';
 import { budgetBands, areas } from '@/lib/doorsData';
 
 interface Props {
@@ -42,36 +42,23 @@ const EnquiryModal: React.FC<Props> = ({ open, onClose, kind, propertyRef, prope
     }
     setSubmitting(true);
     setError('');
-    try {
-      await supabase.from('doors_enquiries').insert({
-        kind,
-        name,
-        email,
-        phone: phone || null,
-        message: message || null,
-        budget_band: budget || null,
-        area_interest: area || null,
-        property_ref: propertyRef || null,
-      });
-
-      await fetch('https://famous.ai/api/crm/6a2dcec9cd468ee0fa9c747f/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email,
-          name: name || undefined,
-          phone: phone || undefined,
-          sms_opt_in: smsOptIn === true,
-          source: kind === 'buyer' ? 'buyer-register' : 'seller-register',
-          tags: ['doors', kind === 'buyer' ? 'buyer' : 'seller'],
-        }),
-      });
-      setDone(true);
-    } catch (err) {
-      setError('Something went wrong. Please try again.');
-    } finally {
-      setSubmitting(false);
+    const { error: leadError } = await captureLead({
+      kind,
+      name,
+      email,
+      phone,
+      message,
+      budget_band: budget,
+      area_interest: area,
+      property_ref: propertyRef,
+      source: propertyRef ? `${kind}-property-enquiry` : `${kind}-enquiry`,
+    });
+    setSubmitting(false);
+    if (leadError) {
+      setError('Something went wrong sending your enquiry. Please try again in a moment.');
+      return;
     }
+    setDone(true);
   };
 
   return (

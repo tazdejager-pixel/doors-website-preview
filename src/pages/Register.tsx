@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { supabase } from '@/lib/supabase';
+import { captureLead } from '@/lib/leads';
 import { budgetBands, areas, HERO_IMG } from '@/lib/doorsData';
 
 const inputClass =
@@ -27,34 +27,22 @@ const Register: React.FC = () => {
     }
     setSubmitting(true);
     setError('');
-    try {
-      await supabase.from('doors_enquiries').insert({
-        kind,
-        name,
-        email,
-        phone: phone || null,
-        message: message || null,
-        budget_band: kind === 'buyer' ? budget || null : null,
-        area_interest: kind === 'buyer' ? area || null : null,
-      });
-      await fetch('https://famous.ai/api/crm/6a2dcec9cd468ee0fa9c747f/subscribe', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          email,
-          name: name || undefined,
-          phone: phone || undefined,
-          sms_opt_in: smsOptIn === true,
-          source: kind === 'buyer' ? 'buyer-register-page' : 'seller-register-page',
-          tags: ['doors', kind],
-        }),
-      });
-      setDone(true);
-    } catch {
-      setError('Something went wrong. Please try again.');
-    } finally {
-      setSubmitting(false);
+    const { error: leadError } = await captureLead({
+      kind,
+      name,
+      email,
+      phone,
+      message,
+      budget_band: kind === 'buyer' ? budget : null,
+      area_interest: kind === 'buyer' ? area : null,
+      source: kind === 'buyer' ? 'buyer-register-page' : 'seller-register-page',
+    });
+    setSubmitting(false);
+    if (leadError) {
+      setError('Something went wrong sending your details. Please try again in a moment.');
+      return;
     }
+    setDone(true);
   };
 
   return (

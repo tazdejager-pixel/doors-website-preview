@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { engine } from '@/lib/engineApi';
+import { captureLead } from '@/lib/leads';
 import { Wordmark, DoorwayMark } from '@/components/doors/Wordmark';
 
 const inputClass =
@@ -49,18 +50,7 @@ const SignIn: React.FC = () => {
       } else {
         const { error } = await signUp(email, password, { full_name: name, phone });
         if (error) { setError(error); return; }
-        fetch('https://famous.ai/api/crm/6a2dcec9cd468ee0fa9c747f/subscribe', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            email,
-            name: name || undefined,
-            phone: phone || undefined,
-            sms_opt_in: smsOptIn === true,
-            source: 'signin-register',
-            tags: ['doors', 'buyer', 'portal'],
-          }),
-        }).catch(() => {});
+        captureLead({ kind: 'buyer', name, email, phone, source: 'signin-register' });
         navigate('/portal');
       }
     } finally {

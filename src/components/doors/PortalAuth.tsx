@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
+import { captureLead } from '@/lib/leads';
 import { budgetBands, areas, HERO_IMG } from '@/lib/doorsData';
 import { Wordmark } from './Wordmark';
 
@@ -40,18 +41,7 @@ const PortalAuth: React.FC = () => {
         if (error) {
           setError(error);
         } else {
-          fetch('https://famous.ai/api/crm/6a2dcec9cd468ee0fa9c747f/subscribe', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-              email,
-              name: name || undefined,
-              phone: phone || undefined,
-              sms_opt_in: smsOptIn === true,
-              source: 'portal-signup',
-              tags: ['doors', 'buyer', 'portal'],
-            }),
-          }).catch(() => {});
+          captureLead({ kind: 'buyer', name, email, phone, budget_band: budget, area_interest: area, source: 'portal-signup' });
         }
       }
     } finally {
