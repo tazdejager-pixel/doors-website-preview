@@ -15,7 +15,7 @@ const Footer: React.FC<Props> = ({ onEnquire }) => {
             <div className="mb-5"><Wordmark tone="ivory" size="md" /></div>
             <p className="text-ivory/55 text-sm font-light leading-relaxed max-w-sm">
               The Key to Extraordinary. A private property brokerage for the Garden Route's most exceptional
-              homes — by introduction, never advertised.
+              homes - by introduction, never advertised.
             </p>
           </div>
 

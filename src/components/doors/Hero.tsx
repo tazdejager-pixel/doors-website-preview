@@ -26,7 +26,7 @@ const Hero: React.FC<Props> = ({ onEnquire }) => {
           <span className="italic">Extraordinary</span>
         </h1>
         <p className="text-[#F8F6F3]/85 text-base sm:text-lg font-light max-w-xl mt-8 leading-relaxed animate-[fadeIn_2.2s_ease]">
-          A private brokerage for the coast's most exceptional homes. We open doors — we do not sell houses.
+          A private brokerage for the coast's most exceptional homes. We open doors - we do not sell houses.
         </p>
         <button
           onClick={onEnquire}

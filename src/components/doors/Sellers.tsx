@@ -9,8 +9,9 @@ interface Props {
 const assurances = [
   { t: 'No boards on the verge', d: 'Your address is never announced. Nothing is staked on the pavement for the street to read.' },
   { t: 'No public show days', d: 'No open houses, no foot traffic, no strangers walking your home. Viewings are by invitation only.' },
-  { t: 'Never a portal listing', d: 'Your home does not appear on any property portal, with no price or photographs left to be browsed.' },
-  { t: 'Shown to a known circle', d: 'Only registered, qualified buyers are introduced — and only those genuinely suited to your home.' },
+  { t: 'Never advertised, unless you ask', d: 'Your home does not appear on any portal, board or show day - no price or photographs left to be browsed - unless you explicitly ask us to advertise it.' },
+  { t: 'Shown to a known circle', d: 'Only registered, qualified buyers are introduced - and only those genuinely suited to your home.' },
+  { t: 'Land and architects, by introduction', d: 'For buyers seeking to build, we can introduce vacant opportunities and the architects best suited to their preferred aesthetic.' },
 ];
 
 const Sellers: React.FC<Props> = ({ onSeller }) => {

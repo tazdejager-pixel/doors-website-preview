@@ -55,12 +55,12 @@ const StudioAuth: React.FC<{ notTeam?: boolean }> = ({ notTeam }) => {
               <h1 className="font-serif text-3xl font-light mb-8 text-center">Sign in</h1>
               <form onSubmit={submit} className="space-y-4">
                 <input
-                  type="email" required value={email} onChange={(e) => setEmail(e.target.value)}
+                  type="email" value={email} onChange={(e) => setEmail(e.target.value)}
                   placeholder="Email"
                   className="w-full bg-transparent border border-[#F8F6F3]/20 px-4 py-3 text-sm focus:border-[#C9A961] outline-none"
                 />
                 <input
-                  type="password" required value={password} onChange={(e) => setPassword(e.target.value)}
+                  type="password" value={password} onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
                   className="w-full bg-transparent border border-[#F8F6F3]/20 px-4 py-3 text-sm focus:border-[#C9A961] outline-none"
                 />

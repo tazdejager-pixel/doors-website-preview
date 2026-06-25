@@ -49,11 +49,11 @@ const ListingForm: React.FC<{
             {['Mossel Bay', 'George', 'Knysna', 'Plettenberg Bay'].map((a) => <option key={a}>{a}</option>)}
           </select>
         </div>
-        <div><label className={lbl}>Price band (public)</label><input className={field} value={p.price_band} onChange={(e) => set('price_band', e.target.value)} placeholder="R22m – R28m" /></div>
+        <div><label className={lbl}>Price band (public)</label><input className={field} value={p.price_band} onChange={(e) => set('price_band', e.target.value)} placeholder="R22m - R28m" /></div>
         <div><label className={lbl}>Exact price (private)</label><input className={field} value={p.exact_price || ''} onChange={(e) => set('exact_price', e.target.value)} placeholder="R24 500 000" /></div>
       </div>
 
-      <div><label className={lbl}>Address (private — unlocks for registered buyers)</label><input className={field} value={p.address || ''} onChange={(e) => set('address', e.target.value)} /></div>
+      <div><label className={lbl}>Address (private - unlocks for registered buyers)</label><input className={field} value={p.address || ''} onChange={(e) => set('address', e.target.value)} /></div>
 
       <div className="grid grid-cols-2 sm:grid-cols-4 gap-4">
         <div><label className={lbl}>Beds</label><input type="number" className={field} value={p.bedrooms ?? ''} onChange={(e) => set('bedrooms', e.target.value ? +e.target.value : null)} /></div>

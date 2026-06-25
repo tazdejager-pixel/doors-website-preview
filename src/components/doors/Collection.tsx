@@ -18,7 +18,7 @@ const Collection: React.FC<Props> = ({ onView }) => {
               A few of the homes we quietly represent.
             </h2>
             <p className="text-[#2C2C2C]/55 text-base font-light leading-relaxed mt-7">
-              Most of what we hold is never published. What appears here is shown without address or price —
+              Most of what we hold is never published. What appears here is shown without address or price -
               a short film and a few lines, an impression only. The full collection is shared by introduction.
             </p>
           </div>

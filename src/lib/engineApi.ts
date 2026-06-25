@@ -1,4 +1,10 @@
 import { supabase } from '@/lib/supabase';
+import { collection } from '@/lib/doorsData';
+
+// PREVIEW MODE: no backend (we are off the Famous database). The engine returns
+// demo data built from the static collection so the studio + portal can be
+// viewed. Set to false once DOORS is wired to its own Supabase edge function.
+export const PREVIEW_MODE = true;
 
 export interface EngineProperty {
   id?: string;
@@ -88,7 +94,65 @@ export interface Overview {
   introductions: EngineIntro[];
 }
 
+// ---------------------------------------------------------------------------
+// Demo data for PREVIEW_MODE (no backend)
+// ---------------------------------------------------------------------------
+const demoMe: EngineTeam = { id: 'demo-admin', full_name: 'DOORS Team', email: 'team@doors-properties.com', role: 'admin' };
+
+const demoProperties: EngineProperty[] = collection.map((p, i) => ({
+  id: String(i + 1),
+  ref: p.ref,
+  title: p.title,
+  area: p.area,
+  price_band: p.priceBand,
+  exact_price: p.exactPrice ?? null,
+  address: p.address ?? null,
+  size_sqm: p.sizeSqm ?? null,
+  erf_sqm: p.erfSqm ?? null,
+  bedrooms: p.bedrooms ?? null,
+  bathrooms: p.bathrooms ?? null,
+  summary: p.summary ?? null,
+  image_url: p.image ?? null,
+  video_url: p.video ?? null,
+  character: p.character ?? null,
+  gallery: p.gallery ?? null,
+  specifics: p.specifics ?? null,
+  discretion_level: p.private ? 'fully-private' : 'public-curated',
+  pipeline_stage: i % 2 === 0 ? 'mandate_won' : 'matched',
+  status: 'active',
+  is_published: !p.private,
+  is_demo: true,
+}));
+
+const demoBuyers: EngineBuyer[] = [
+  { id: 'b1', full_name: 'A. Consolidating Family', email: 'family@example.com', phone: null, budget_band: 'R25m - R40m', area_interest: 'Knysna', timeline: 'Within 6 months', bedrooms_min: 4, priorities: ['Absolute privacy', 'Sea views'] },
+  { id: 'b2', full_name: 'Semigrating Executive', email: 'exec@example.com', phone: null, budget_band: 'R15m - R25m', area_interest: 'Plettenberg Bay', timeline: 'Actively looking', bedrooms_min: 4, priorities: ['Secure estate', 'Family living'] },
+];
+
+const demoOverview: Overview = {
+  me: demoMe,
+  isAdmin: true,
+  properties: demoProperties,
+  settings: { id: 1, mandate_marketing_unlocked: false },
+  team: [demoMe],
+  requests: [
+    { id: 'r1', user_id: 'b1', property_ref: demoProperties[0]?.ref ?? 'DR-204', request_type: 'viewing', message: 'Would love a private viewing.', status: 'open', created_at: '2026-06-20T10:00:00Z' },
+  ],
+  outreach: [
+    { id: 'o1', property_ref: null, title: 'Quarterly market note to the private list', kind: 'editorial', audience_note: 'Registered buyers', status: 'draft', created_at: '2026-06-18T09:00:00Z' },
+  ],
+  buyers: demoBuyers,
+  introductions: [],
+};
+
+function demoEngine<T>(action: string): { data?: T; error?: string } {
+  if (action === 'whoami') return { data: { is_team: true } as unknown as T };
+  if (action === 'overview') return { data: demoOverview as unknown as T };
+  return { data: {} as unknown as T };
+}
+
 export async function engine<T = any>(action: string, payload: any = {}): Promise<{ data?: T; error?: string; status?: number }> {
+  if (PREVIEW_MODE) return demoEngine<T>(action);
   const { data, error } = await supabase.functions.invoke('doors-engine', { body: { action, payload } });
   if (error) {
     let body: any = data;

@@ -23,7 +23,7 @@ const Philosophy: React.FC = () => {
             {
               n: '01',
               title: 'Access by Introduction',
-              body: 'Homes are shown to a small, registered circle — never advertised to the open market. You are introduced, not sold to.',
+              body: 'Homes are shown to a small, registered circle - never advertised to the open market. You are introduced, not sold to.',
             },
             {
               n: '02',
@@ -33,7 +33,7 @@ const Philosophy: React.FC = () => {
             {
               n: '03',
               title: 'Advisory, Not Sales',
-              body: 'Honest, numerate counsel from an advisor who knows the market — not a salesperson chasing a transaction.',
+              body: 'Honest, numerate counsel from an advisor who knows the market - not a salesperson chasing a transaction.',
             },
           ].map((item, i) => (
             <Reveal key={item.n} delay={i * 120}>

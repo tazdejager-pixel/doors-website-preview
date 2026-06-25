@@ -1,5 +1,4 @@
-import React, { createContext, useContext, useEffect, useState } from 'react';
-import { supabase } from '@/lib/supabase';
+import React, { createContext, useContext, useState } from 'react';
 import type { Session, User } from '@supabase/supabase-js';
 
 export interface Profile {
@@ -26,85 +25,60 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
+/**
+ * PREVIEW MODE auth.
+ *
+ * The original backend lived on the Famous "databasepad" service, which we no
+ * longer have credentials for. While we move DOORS onto its own Supabase, this
+ * provider runs the site with no database: sign-in always succeeds (no email or
+ * password required) so the portal and engine can be viewed. When the real
+ * backend is wired up, restore the Supabase-backed version of this file.
+ */
+const DEMO_USER = {
+  id: 'demo-user',
+  email: 'preview@doors-properties.com',
+} as unknown as User;
+
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<User | null>(null);
-  const [session, setSession] = useState<Session | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
-  const [loading, setLoading] = useState(true);
 
-  const loadProfile = async (uid: string) => {
-    const { data } = await supabase.from('doors_profiles').select('*').eq('id', uid).maybeSingle();
-    if (data) setProfile(data as Profile);
-  };
-
-  useEffect(() => {
-    supabase.auth.getSession().then(({ data }) => {
-      setSession(data.session);
-      setUser(data.session?.user ?? null);
-      if (data.session?.user) loadProfile(data.session.user.id);
-      setLoading(false);
-    });
-
-    const { data: sub } = supabase.auth.onAuthStateChange((_event, sess) => {
-      setSession(sess);
-      setUser(sess?.user ?? null);
-      if (sess?.user) loadProfile(sess.user.id);
-      else setProfile(null);
-    });
-
-    return () => sub.subscription.unsubscribe();
-  }, []);
-
-  const signUp = async (email: string, password: string, meta: Profile) => {
-    const { data, error } = await supabase.auth.signUp({ email, password });
-    if (error) return { error: error.message };
-    const uid = data.user?.id;
-    if (!data.session) {
-      const { error: signInErr } = await supabase.auth.signInWithPassword({ email, password });
-      if (signInErr) return { error: signInErr.message };
-    }
-    if (uid) {
-      await supabase.from('doors_profiles').upsert({
-        id: uid,
-        full_name: meta.full_name || null,
-        phone: meta.phone || null,
-        budget_band: meta.budget_band || null,
-        area_interest: meta.area_interest || null,
-        timeline: meta.timeline || null,
-        bedrooms_min: meta.bedrooms_min ?? null,
-        priorities: meta.priorities || null,
-      });
-      setProfile(meta);
-    }
+  const signIn = async (_email: string, _password: string) => {
+    setUser(DEMO_USER);
     return {};
   };
 
-  const signIn = async (email: string, password: string) => {
-    const { error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) return { error: error.message };
+  const signUp = async (_email: string, _password: string, meta: Profile) => {
+    setUser(DEMO_USER);
+    setProfile(meta);
     return {};
   };
 
   const signOut = async () => {
-    await supabase.auth.signOut();
+    setUser(null);
     setProfile(null);
   };
 
   const updateProfile = async (patch: Profile) => {
-    if (!user) return { error: 'Not signed in' };
-    const { error } = await supabase.from('doors_profiles').upsert({ id: user.id, ...patch });
-    if (error) return { error: error.message };
     setProfile((prev) => ({ ...(prev || {}), ...patch }));
     return {};
   };
 
-  const refreshProfile = async () => {
-    if (user) await loadProfile(user.id);
-  };
+  const refreshProfile = async () => {};
 
   return (
     <AuthContext.Provider
-      value={{ user, session, profile, loading, signUp, signIn, signOut, updateProfile, refreshProfile }}
+      value={{
+        user,
+        session: null,
+        profile,
+        loading: false,
+        signUp,
+        signIn,
+        signOut,
+        updateProfile,
+        refreshProfile,
+      }}
     >
       {children}
     </AuthContext.Provider>

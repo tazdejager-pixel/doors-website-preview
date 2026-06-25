@@ -61,7 +61,7 @@ const SettingsTab: React.FC<{
             <input value={ffc} onChange={(e) => setFfc(e.target.value)} className="w-full bg-[#1F1F1F] border border-[#F8F6F3]/15 px-3 py-2 text-sm text-[#F8F6F3]" placeholder="e.g. FFC 2026/…" />
           </div>
           <button onClick={toggleGate} disabled={busy} className={`px-5 py-2.5 text-xs tracking-[0.18em] uppercase font-medium disabled:opacity-50 ${unlocked ? 'bg-[#E07a5f] text-white' : 'bg-[#9DC183] text-[#1F1F1F]'}`}>
-            {unlocked ? 'Close the gate' : 'Open — certificate held'}
+            {unlocked ? 'Close the gate' : 'Open - certificate held'}
           </button>
         </div>
         <p className={`text-xs mt-3 tracking-[0.1em] uppercase ${unlocked ? 'text-[#9DC183]' : 'text-[#E07a5f]'}`}>
@@ -103,7 +103,7 @@ const SettingsTab: React.FC<{
       <div className="border border-[#F8F6F3]/10 p-6">
         <div className="flex items-center gap-3 mb-3"><FlaskConical size={18} className="text-[#C9A961]" /><h3 className="font-serif text-xl">Demonstration data</h3></div>
         <p className="text-sm text-[#F8F6F3]/65 leading-relaxed mb-4">
-          Clearly-flagged DEMO homes for the first walkthrough. They are placeholders — never real homes sold — and
+          Clearly-flagged DEMO homes for the first walkthrough. They are placeholders - never real homes sold - and
           should be removed before launch.
         </p>
         <div className="flex gap-3 flex-wrap">

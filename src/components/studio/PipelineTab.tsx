@@ -73,7 +73,7 @@ const PipelineTab: React.FC<{
                     )}
                   </div>
                 ))}
-                {!homes.length && <p className="text-[11px] text-[#F8F6F3]/25">—</p>}
+                {!homes.length && <p className="text-[11px] text-[#F8F6F3]/25">-</p>}
               </div>
             </div>
           );

@@ -85,7 +85,7 @@ const Studio: React.FC = () => {
         {/* Gate banner */}
         <div className={`px-6 sm:px-10 py-2.5 flex items-center gap-2 text-[11px] tracking-[0.12em] uppercase ${gateOpen ? 'bg-[#9DC183]/10 text-[#9DC183]' : 'bg-[#E07a5f]/10 text-[#E07a5f]'}`}>
           {gateOpen ? <Unlock size={13} /> : <Lock size={13} />}
-          {gateOpen ? 'Launch gate open — live mandate marketing permitted' : 'Launch gate closed — building brand & database only, live mandate marketing locked'}
+          {gateOpen ? 'Launch gate open - live mandate marketing permitted' : 'Launch gate closed - building brand & database only, live mandate marketing locked'}
         </div>
 
         <div className="px-6 sm:px-10 py-8 max-w-[1200px]">

@@ -120,7 +120,7 @@ const BuyersTab: React.FC<{
                     </div>
                     <div className="min-w-0">
                       <p className="font-serif text-base truncate">{b.full_name || b.email || 'Unnamed buyer'}</p>
-                      <p className="text-xs text-[#F8F6F3]/45 truncate">{b.budget_band || '—'} · {b.area_interest || '—'}{reasons.length ? ` · ${reasons.join(', ')}` : ''}</p>
+                      <p className="text-xs text-[#F8F6F3]/45 truncate">{b.budget_band || '-'} · {b.area_interest || '-'}{reasons.length ? ` · ${reasons.join(', ')}` : ''}</p>
                     </div>
                   </div>
                   <button
@@ -147,7 +147,7 @@ const BuyersTab: React.FC<{
 const Tag: React.FC<{ label: string; v?: string | null }> = ({ label, v }) => (
   <div className="bg-[#1F1F1F] px-2 py-1.5">
     <p className="text-[9px] tracking-[0.12em] uppercase text-[#F8F6F3]/35">{label}</p>
-    <p className="text-[#F8F6F3]/70 truncate">{v || '—'}</p>
+    <p className="text-[#F8F6F3]/70 truncate">{v || '-'}</p>
   </div>
 );
 

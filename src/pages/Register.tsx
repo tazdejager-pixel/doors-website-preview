@@ -70,7 +70,7 @@ const Register: React.FC = () => {
               You are introduced,<br />not advertised to.
             </h2>
             <p className="text-[#F8F6F3]/70 text-sm font-light leading-relaxed mt-6 max-w-md">
-              Every detail you share is held in confidence. We reply personally — never with automated noise.
+              Every detail you share is held in confidence. We reply personally - never with automated noise.
             </p>
           </div>
         </div>

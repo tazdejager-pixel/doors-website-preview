@@ -24,14 +24,7 @@ const PortalAuth: React.FC = () => {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    if (!email || !password) {
-      setError('Please enter your email and password.');
-      return;
-    }
-    if (mode === 'signup' && password.length < 6) {
-      setError('Please choose a password of at least six characters.');
-      return;
-    }
+    // Preview mode: no credentials required - clicking Sign In takes you in.
     setBusy(true);
     try {
       if (mode === 'signin') {

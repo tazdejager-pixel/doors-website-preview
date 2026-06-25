@@ -95,7 +95,7 @@ const EnquiryModal: React.FC<Props> = ({ open, onClose, kind, propertyRef, prope
               <h3 className="font-serif text-3xl text-[#2C2C2C] mb-4">Thank you.</h3>
               <p className="text-[#2C2C2C]/60 text-sm leading-relaxed max-w-sm mx-auto">
                 Your enquiry has reached us privately. Chris, or a member of the DOORS circle, will be in
-                touch personally — discreetly, and in your own time.
+                touch personally - discreetly, and in your own time.
               </p>
               <button
                 onClick={onClose}

@@ -43,7 +43,7 @@ const RegisterCTA: React.FC<Props> = ({ onBuyer, onSeller }) => {
               <p className="text-[10px] tracking-[0.25em] uppercase text-[#C9A961] mb-4">For Sellers</p>
               <h3 className="font-serif text-2xl mb-3">Speak about a sale</h3>
               <p className="text-[#F8F6F3]/60 group-hover:text-[#2C2C2C]/70 text-sm font-light">
-                A confidential discussion about representing your home — without advertising it.
+                A confidential discussion about representing your home - without advertising it.
               </p>
             </button>
           </div>

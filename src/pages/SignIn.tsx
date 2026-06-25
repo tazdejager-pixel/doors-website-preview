@@ -10,7 +10,7 @@ const inputClass =
 /**
  * The single clean DOORS sign-in. After authenticating, the system asks the
  * engine whether this person is a team member and takes them to the right
- * place — the private engine for the team, the buyer portal for everyone else.
+ * place - the private engine for the team, the buyer portal for everyone else.
  */
 const SignIn: React.FC = () => {
   const { user, signIn, signUp } = useAuth();
@@ -39,14 +39,7 @@ const SignIn: React.FC = () => {
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     setError('');
-    if (!email || !password) {
-      setError('Please enter your email and password.');
-      return;
-    }
-    if (mode === 'register' && password.length < 6) {
-      setError('Please choose a password of at least six characters.');
-      return;
-    }
+    // Preview mode: no credentials required - clicking Sign In takes you in.
     setBusy(true);
     try {
       if (mode === 'signin') {

@@ -71,7 +71,7 @@ const MarketingTab: React.FC<{
               ))}
             </div>
             <input value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Internal title" className="w-full bg-[#1F1F1F] border border-[#F8F6F3]/15 px-3 py-2 text-sm text-[#F8F6F3]" />
-            <textarea value={note} onChange={(e) => setNote(e.target.value)} placeholder="Audience note — who in the circle this reaches" className="w-full bg-[#1F1F1F] border border-[#F8F6F3]/15 px-3 py-2 text-sm text-[#F8F6F3] h-20" />
+            <textarea value={note} onChange={(e) => setNote(e.target.value)} placeholder="Audience note - who in the circle this reaches" className="w-full bg-[#1F1F1F] border border-[#F8F6F3]/15 px-3 py-2 text-sm text-[#F8F6F3] h-20" />
             {err && <p className="text-[#E07a5f] text-xs">{err === 'gate_closed' ? 'Locked by the launch gate.' : err}</p>}
             <div className="flex gap-3">
               <button disabled={busy} onClick={create} className="bg-[#C9A961] text-[#1F1F1F] px-5 py-2 text-xs tracking-[0.18em] uppercase font-medium hover:bg-[#d8b977] disabled:opacity-50">Save draft</button>

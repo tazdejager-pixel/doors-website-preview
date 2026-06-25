@@ -26,7 +26,7 @@ export const collection: DoorsProperty[] = [
     ref: 'DR-204',
     title: 'Knysna Headlands Estate',
     area: 'Knysna',
-    priceBand: 'R22m – R28m',
+    priceBand: 'R22m - R28m',
     exactPrice: 'R24 500 000',
     address: '14 Eastford Ridge, Eastford, Knysna',
     sizeSqm: 720,
@@ -57,7 +57,7 @@ export const collection: DoorsProperty[] = [
     ref: 'DR-187',
     title: 'Plettenberg Beachfront',
     area: 'Plettenberg Bay',
-    priceBand: 'R35m – R45m',
+    priceBand: 'R35m - R45m',
     exactPrice: 'R39 750 000',
     address: 'Beachyhead Drive, Plettenberg Bay',
     sizeSqm: 640,
@@ -88,7 +88,7 @@ export const collection: DoorsProperty[] = [
     ref: 'DR-156',
     title: 'Pezula Ridge Residence',
     area: 'Knysna',
-    priceBand: 'R15m – R20m',
+    priceBand: 'R15m - R20m',
     exactPrice: 'R17 900 000',
     address: 'Pezula Private Estate, Knysna',
     sizeSqm: 540,
@@ -117,7 +117,7 @@ export const collection: DoorsProperty[] = [
     ref: 'DR-141',
     title: 'Mossel Bay Cliff House',
     area: 'Mossel Bay',
-    priceBand: 'R12m – R16m',
+    priceBand: 'R12m - R16m',
     exactPrice: 'R13 800 000',
     address: 'Pinnacle Point, Mossel Bay',
     sizeSqm: 480,
@@ -125,7 +125,7 @@ export const collection: DoorsProperty[] = [
     bedrooms: 4,
     bathrooms: 3,
     summary: 'A clean, low villa on the cliff edge, with a sheltered pool and uninterrupted sea views to the west.',
-    image: 'https://d64gsuwffb70l.cloudfront.net/6a2dcec9cd468ee0fa9c747f_1781387080337_bc05ba07.jpg',
+    image: `${import.meta.env.BASE_URL}images/aerial-coastal-estate.jpg`,
     video: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4',
     character: [
       'A low, clean villa poised on the cliff edge.',
@@ -133,7 +133,7 @@ export const collection: DoorsProperty[] = [
       'Uninterrupted sunset views across the bay.',
     ],
     gallery: [
-      'https://d64gsuwffb70l.cloudfront.net/6a2dcec9cd468ee0fa9c747f_1781387080337_bc05ba07.jpg',
+      `${import.meta.env.BASE_URL}images/aerial-coastal-estate.jpg`,
       'https://d64gsuwffb70l.cloudfront.net/6a2dcec9cd468ee0fa9c747f_1781387081204_241d9be7.jpg',
     ],
     specifics: [
@@ -146,7 +146,7 @@ export const collection: DoorsProperty[] = [
     ref: 'DR-119',
     title: 'Goose Valley Sanctuary',
     area: 'Plettenberg Bay',
-    priceBand: 'R18m – R24m',
+    priceBand: 'R18m - R24m',
     exactPrice: 'R20 400 000',
     address: 'Goose Valley Golf Estate, Plettenberg Bay',
     sizeSqm: 610,
@@ -175,7 +175,7 @@ export const collection: DoorsProperty[] = [
     ref: 'DR-098',
     title: 'George Mountain Retreat',
     area: 'George',
-    priceBand: 'R10m – R14m',
+    priceBand: 'R10m - R14m',
     exactPrice: 'R11 600 000',
     address: 'Kraaibosch, George',
     sizeSqm: 520,
@@ -200,13 +200,13 @@ export const collection: DoorsProperty[] = [
       'Established trees for full privacy',
     ],
   },
-  // Fully-private homes — never shown publicly; appear in the portal only
+  // Fully-private homes - never shown publicly; appear in the portal only
   // when DOORS has introduced them to a specific buyer.
   {
     ref: 'DR-071',
     title: 'The Lagoon House',
     area: 'Knysna',
-    priceBand: 'R45m – R60m',
+    priceBand: 'R45m - R60m',
     exactPrice: 'R52 000 000',
     address: 'Leisure Isle, Knysna',
     sizeSqm: 880,
@@ -230,7 +230,9 @@ export const collection: DoorsProperty[] = [
   },
 ];
 
-export const HERO_IMG = 'https://d64gsuwffb70l.cloudfront.net/6a2dcec9cd468ee0fa9c747f_1781387061682_bc8b1541.png';
+// Local, brand-supplied imagery (served under the app base path). Garden Route
+// coastal homes, no mountain backdrop - per client feedback 25/06/2026.
+export const HERO_IMG = `${import.meta.env.BASE_URL}images/hero-cliff-villa.jpg`;
 export const FOUNDER_IMG = 'https://d64gsuwffb70l.cloudfront.net/6a2dcec9cd468ee0fa9c747f_1781387118567_d8312daa.png';
 export const REGION_IMG = 'https://d64gsuwffb70l.cloudfront.net/6a2dcec9cd468ee0fa9c747f_1781387134039_4962e41b.jpg';
 export const COLLECTION_IMG = 'https://d64gsuwffb70l.cloudfront.net/6a2dcec9cd468ee0fa9c747f_1781387094228_55eba4c8.png';
@@ -239,9 +241,9 @@ export const COLLECTION_IMG = 'https://d64gsuwffb70l.cloudfront.net/6a2dcec9cd46
 export const publicCollection = collection.filter((p) => !p.private);
 
 export const budgetBands = [
-  'R10m – R15m',
-  'R15m – R25m',
-  'R25m – R40m',
+  'R10m - R15m',
+  'R15m - R25m',
+  'R25m - R40m',
   'R40m+',
 ];
 

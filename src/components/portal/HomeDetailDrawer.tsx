@@ -52,7 +52,7 @@ const HomeDetailDrawer: React.FC<Props> = ({ property, onClose, saved, onToggleS
             <img src={gallery[active]} alt={p.title} className="w-full h-full object-cover" />
             {p.private && (
               <span className="absolute top-5 left-5 text-[10px] tracking-[0.25em] uppercase bg-[#2C2C2C] text-[#C9A961] px-3 py-1.5">
-                Private — introduced to you
+                Private - introduced to you
               </span>
             )}
           </div>
@@ -104,7 +104,7 @@ const HomeDetailDrawer: React.FC<Props> = ({ property, onClose, saved, onToggleS
             </div>
             <div className="bg-[#F8F6F3] p-4">
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#2C2C2C]/40">Bathrooms</p>
-              <p className="font-serif text-lg mt-1">{p.bathrooms ?? '—'}</p>
+              <p className="font-serif text-lg mt-1">{p.bathrooms ?? '-'}</p>
             </div>
             <div className="bg-[#F8F6F3] p-4">
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#2C2C2C]/40">Under roof</p>
@@ -172,7 +172,7 @@ const HomeDetailDrawer: React.FC<Props> = ({ property, onClose, saved, onToggleS
                   {sending ? 'Sending…' : 'Send to Chris'}
                 </button>
                 <p className="text-[#2C2C2C]/40 text-xs mt-3 italic">
-                  Every viewing and introduction is arranged personally — never automated.
+                  Every viewing and introduction is arranged personally - never automated.
                 </p>
               </>
             )}

@@ -26,7 +26,6 @@ const Navbar: React.FC<Props> = ({ onEnquire }) => {
   const links = [
     { label: 'How It Works', action: () => scrollTo('philosophy') },
     { label: 'Collection', action: () => scrollTo('collection') },
-    { label: 'The Founder', action: () => scrollTo('founder') },
     { label: 'For Sellers', action: () => scrollTo('sellers') },
     { label: 'Register', action: () => navigate('/register') },
     { label: 'Sign In', action: () => navigate('/signin') },

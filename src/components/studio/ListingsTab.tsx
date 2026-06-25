@@ -100,16 +100,16 @@ const PropertyBook: React.FC<{ p: EngineProperty; onClose: () => void }> = ({ p,
 
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-6 text-sm">
             <Stat label="Guide" value={p.exact_price || p.price_band} />
-            <Stat label="Beds" value={String(p.bedrooms ?? '—')} />
-            <Stat label="Baths" value={String(p.bathrooms ?? '—')} />
-            <Stat label="Erf" value={p.erf_sqm ? `${p.erf_sqm} m²` : '—'} />
+            <Stat label="Beds" value={String(p.bedrooms ?? '-')} />
+            <Stat label="Baths" value={String(p.bathrooms ?? '-')} />
+            <Stat label="Erf" value={p.erf_sqm ? `${p.erf_sqm} m²` : '-'} />
           </div>
           {p.address && <p className="mt-5 text-sm"><span className="text-[#9a8a6a] uppercase tracking-[0.15em] text-[10px]">Address</span><br />{p.address}</p>}
 
           {!!(p.specifics && p.specifics.length) && (
             <div className="mt-6">
               <p className="text-[10px] tracking-[0.2em] uppercase text-[#9a8a6a] mb-2">The finer detail</p>
-              <ul className="space-y-1.5 text-sm">{p.specifics.map((s, i) => <li key={i}>— {s}</li>)}</ul>
+              <ul className="space-y-1.5 text-sm">{p.specifics.map((s, i) => <li key={i}>- {s}</li>)}</ul>
             </div>
           )}
 
