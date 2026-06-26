@@ -233,9 +233,8 @@ export const collection: DoorsProperty[] = [
 // Local, brand-supplied imagery (served under the app base path). Garden Route
 // coastal homes, no mountain backdrop - per client feedback 25/06/2026.
 export const HERO_IMG = `${import.meta.env.BASE_URL}images/hero-cliff-villa.jpg`;
-export const FOUNDER_IMG = 'https://d64gsuwffb70l.cloudfront.net/6a2dcec9cd468ee0fa9c747f_1781387118567_d8312daa.png';
-export const REGION_IMG = 'https://d64gsuwffb70l.cloudfront.net/6a2dcec9cd468ee0fa9c747f_1781387134039_4962e41b.jpg';
-export const COLLECTION_IMG = 'https://d64gsuwffb70l.cloudfront.net/6a2dcec9cd468ee0fa9c747f_1781387094228_55eba4c8.png';
+export const REGION_IMG = `${import.meta.env.BASE_URL}images/garden-route-fynbos-coastline.jpg`;
+export const COLLECTION_IMG = `${import.meta.env.BASE_URL}images/bluehour-home-dusk.jpg`;
 
 // Publicly-visible collection (excludes fully-private homes)
 export const publicCollection = collection.filter((p) => !p.private);
