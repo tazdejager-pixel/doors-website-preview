@@ -43,7 +43,7 @@ const Footer: React.FC<Props> = ({ onEnquire }) => {
 
 
         <div className="border-t border-[#F8F6F3]/10 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-[#F8F6F3]/40 text-xs font-light">
-          <p>© {new Date().getFullYear()} Doors Properties (Pty) Ltd. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Doors (Pty) Ltd. All rights reserved.</p>
           <p>Prices shown as bands. Homes shown by private introduction only.</p>
         </div>
       </div>

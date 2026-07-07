@@ -13,7 +13,7 @@ const Legal: React.FC = () => {
 
       <div className="max-w-[760px] mx-auto px-6 sm:px-10 py-20">
         <h1 className="font-serif text-5xl font-light mb-3">Privacy &amp; Legal</h1>
-        <p className="text-[#2C2C2C]/50 text-sm mb-14">Doors Properties (Pty) Ltd · George, Western Cape</p>
+        <p className="text-[#2C2C2C]/50 text-sm mb-14">Doors (Pty) Ltd · George, Western Cape</p>
 
         <div className="space-y-12 text-[#2C2C2C]/65 text-[15px] font-light leading-relaxed">
           <section>
@@ -46,7 +46,7 @@ const Legal: React.FC = () => {
           <section>
             <h2 className="font-serif text-2xl text-[#2C2C2C] mb-3">The entity</h2>
             <p>
-              The brand DOORS is operated by Doors Properties (Pty) Ltd, a private company registered in South
+              The brand DOORS is operated by Doors (Pty) Ltd, a private company registered in South
               Africa, based in George and working the Garden Route corridor from Mossel Bay through Knysna to
               Plettenberg Bay.
             </p>
