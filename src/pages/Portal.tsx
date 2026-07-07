@@ -7,7 +7,8 @@ import PortalCard from '@/components/portal/PortalCard';
 import ProfileTab from '@/components/portal/ProfileTab';
 import HomeDetailDrawer from '@/components/portal/HomeDetailDrawer';
 import { Wordmark } from '@/components/doors/Wordmark';
-import { collection, publicCollection, DoorsProperty } from '@/lib/doorsData';
+import { DoorsProperty } from '@/lib/doorsData';
+import { fetchVisibleListings } from '@/lib/listings';
 
 
 type Tab = 'collection' | 'saved' | 'profile';
@@ -19,25 +20,28 @@ const PortalDashboard: React.FC = () => {
   const [tab, setTab] = useState<Tab>('collection');
   const [saved, setSaved] = useState<string[]>([]);
   const [viewed, setViewed] = useState<string[]>([]);
-  const [intros, setIntros] = useState<string[]>([]);
+  const [listings, setListings] = useState<DoorsProperty[]>([]);
   const [open, setOpen] = useState<DoorsProperty | null>(null);
 
   const load = useCallback(async () => {
     if (!user) return;
-    const [s, v, i] = await Promise.all([
+    // Listings come from the DB, filtered by RLS to what this buyer may see
+    // (public-curated homes + any private homes introduced to them).
+    const [homes, s, v] = await Promise.all([
+      fetchVisibleListings(),
       supabase.from('doors_saved_homes').select('property_ref').eq('user_id', user.id),
       supabase.from('doors_viewed_homes').select('property_ref').eq('user_id', user.id).order('viewed_at', { ascending: false }),
-      supabase.from('doors_private_introductions').select('property_ref').eq('user_id', user.id),
     ]);
+    setListings(homes);
     setSaved((s.data || []).map((r) => r.property_ref));
     setViewed(Array.from(new Set((v.data || []).map((r) => r.property_ref))));
-    setIntros((i.data || []).map((r) => r.property_ref));
   }, [user]);
 
   useEffect(() => { load(); }, [load]);
 
-  // Homes this buyer may see: all public + any private homes introduced to them.
-  const visible = collection.filter((p) => !p.private || intros.includes(p.ref));
+  // Homes this buyer may see (RLS already filtered them).
+  const visible = listings;
+  const publicCollection = listings.filter((p) => !p.private);
 
   const toggleSave = async (ref: string) => {
     if (!user) return;

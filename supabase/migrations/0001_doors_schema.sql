@@ -212,5 +212,19 @@ create policy enquiries_insert on public.doors_enquiries
   for insert to anon, authenticated
   with check (true);
 
--- doors_properties / doors_team / doors_settings / doors_outreach:
+-- doors_properties: public may read PUBLISHED public-curated listings; a signed-in
+-- buyer may additionally read the private listings they have been introduced to.
+-- (The engine writes via service_role and bypasses RLS.)
+drop policy if exists properties_public_read on public.doors_properties;
+create policy properties_public_read on public.doors_properties
+  for select to anon, authenticated
+  using (is_published = true and discretion_level = 'public-curated');
+
+drop policy if exists properties_intro_read on public.doors_properties;
+create policy properties_intro_read on public.doors_properties
+  for select to authenticated
+  using (exists (select 1 from public.doors_private_introductions i
+                 where i.user_id = auth.uid() and i.property_ref = doors_properties.ref));
+
+-- doors_team / doors_settings / doors_outreach:
 -- no client policies -> locked to service_role (the engine) only.

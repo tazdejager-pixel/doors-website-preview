@@ -1,5 +1,6 @@
 import React from 'react';
-import { publicCollection, DoorsProperty } from '@/lib/doorsData';
+import { DoorsProperty } from '@/lib/doorsData';
+import { usePublicCollection } from '@/lib/listings';
 import PropertyCard from './PropertyCard';
 import Reveal from './Reveal';
 
@@ -8,6 +9,7 @@ interface Props {
 }
 
 const Collection: React.FC<Props> = ({ onView }) => {
+  const { properties: publicCollection, loading } = usePublicCollection();
   return (
     <section id="collection" className="bg-[#EFEBE5] py-28 sm:py-40">
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10">
@@ -25,11 +27,19 @@ const Collection: React.FC<Props> = ({ onView }) => {
         </Reveal>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-16">
-          {publicCollection.map((p, i) => (
-            <Reveal key={p.ref} delay={(i % 3) * 100}>
-              <PropertyCard property={p} onView={onView} />
-            </Reveal>
-          ))}
+          {loading
+            ? Array.from({ length: 3 }).map((_, i) => (
+                <div key={i} className="animate-pulse">
+                  <div className="aspect-[4/3] bg-[#2C2C2C]/5" />
+                  <div className="h-4 bg-[#2C2C2C]/5 mt-5 w-1/2" />
+                  <div className="h-3 bg-[#2C2C2C]/5 mt-3 w-3/4" />
+                </div>
+              ))
+            : publicCollection.map((p, i) => (
+                <Reveal key={p.ref} delay={(i % 3) * 100}>
+                  <PropertyCard property={p} onView={onView} />
+                </Reveal>
+              ))}
         </div>
 
         <Reveal>
