@@ -1,0 +1,4 @@
+project_id = "stgpdnxengnhsliqwavh"
+
+[functions.doors-engine]
+verify_jwt = false

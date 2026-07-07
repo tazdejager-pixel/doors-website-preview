@@ -3,13 +3,12 @@ import { createClient } from '@supabase/supabase-js';
 /**
  * Interim lead capture for the DOORS preview site.
  *
- * The original backend (Famous "databasepad") is gone, so enquiries are stored
- * in LAUNCHT's Supabase via the publishable key. RLS allows anon INSERT only on
- * `doors_enquiries` (no read), so this is safe to ship in the client. At launch,
- * repoint LEADS_URL/LEADS_KEY to the DOORS-owned Supabase project.
+ * Enquiries are stored in the DOORS-owned Supabase project via the publishable
+ * key. RLS allows anon INSERT only on `doors_enquiries` (no read), so this is
+ * safe to ship in the client. Migrated off LAUNCHT's Supabase 07/07/2026.
  */
-const LEADS_URL = 'https://pntqrwahxmnarhonsjkq.supabase.co';
-const LEADS_KEY = 'sb_publishable_9JsaN4zKL8Mxca4ySz-jbQ_eSDzPhUP';
+const LEADS_URL = 'https://stgpdnxengnhsliqwavh.supabase.co';
+const LEADS_KEY = 'sb_publishable_54HNuuXIbonI-x0YUToYWw_9gwuI6pK';
 
 const leadsClient = createClient(LEADS_URL, LEADS_KEY);
 

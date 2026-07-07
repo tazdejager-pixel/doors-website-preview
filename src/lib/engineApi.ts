@@ -1,10 +1,10 @@
 import { supabase } from '@/lib/supabase';
 import { collection } from '@/lib/doorsData';
 
-// PREVIEW MODE: no backend (we are off the Famous database). The engine returns
-// demo data built from the static collection so the studio + portal can be
-// viewed. Set to false once DOORS is wired to its own Supabase edge function.
-export const PREVIEW_MODE = true;
+// Live backend: DOORS now runs on its own Supabase project + the `doors-engine`
+// edge function (wired 07/07/2026). Set to true only to demo the studio without
+// a backend.
+export const PREVIEW_MODE = false;
 
 export interface EngineProperty {
   id?: string;
