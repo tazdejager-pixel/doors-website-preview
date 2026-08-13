@@ -1,0 +1,302 @@
+<!doctype html>
+<html lang="en-ZA">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="noindex, nofollow" />
+<title>DOORS &middot; A note on the property renders</title>
+<style>
+  :root {
+    --onyx:#0A0908; --ivory:#F5F1E8; --gold:#C9A961; --gold-deep:#8a6f2c;
+    --stone:#8B857A; --ink:#26241f; --line:#ddd5c6; --panel:#fffdf8; --ground:#f6f2e9;
+  }
+  * { box-sizing:border-box; }
+  body {
+    margin:0; background:var(--ground); color:var(--ink);
+    font-family:"Montserrat",ui-sans-serif,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
+    font-size:16px; line-height:1.65; -webkit-font-smoothing:antialiased;
+  }
+  a { color:var(--gold-deep); }
+  .wrap { max-width:1240px; margin:0 auto; padding:clamp(2rem,5vw,4rem) clamp(1rem,4vw,2.5rem) 5rem; }
+
+  header.top { border-bottom:1px solid var(--line); padding-bottom:2.2rem; margin-bottom:3rem; }
+  .mark {
+    font-family:"Playfair Display",ui-serif,Georgia,serif;
+    letter-spacing:0.42em; font-size:1.05rem; color:var(--onyx); margin:0 0 2rem;
+  }
+  h1 {
+    font-family:"Playfair Display",ui-serif,Georgia,"Times New Roman",serif;
+    font-weight:400; font-size:clamp(1.9rem,4.6vw,3rem); line-height:1.12;
+    margin:0 0 1.2rem; text-wrap:balance; color:var(--onyx);
+  }
+  .lede { max-width:64ch; color:#4a463f; margin:0 0 1rem; font-size:clamp(1rem,1.5vw,1.08rem); }
+
+  .ask {
+    margin-top:2rem; background:var(--panel); border:1px solid var(--line);
+    border-left:3px solid var(--gold); padding:1.3rem 1.5rem; max-width:64ch;
+  }
+  .ask h2 {
+    font-size:0.66rem; letter-spacing:0.24em; text-transform:uppercase;
+    color:var(--gold-deep); margin:0 0 0.6rem;
+  }
+  .ask p { margin:0 0 0.6rem; }
+  .ask p:last-child { margin-bottom:0; }
+
+  .prop { margin:0 0 clamp(3rem,6vw,4.5rem); }
+  .prop h2 {
+    font-family:"Playfair Display",ui-serif,Georgia,serif; font-weight:400;
+    font-size:clamp(1.35rem,2.5vw,1.75rem); margin:0 0 1.1rem; color:var(--onyx);
+    border-bottom:1px solid var(--line); padding-bottom:0.7rem;
+  }
+  .row { display:grid; grid-template-columns:1fr; gap:1rem; }
+  @media (min-width:900px) { .row { grid-template-columns:repeat(3,1fr); } }
+
+  .col { margin:0; display:flex; flex-direction:column; gap:0.55rem; }
+  .col img { display:block; width:100%; height:auto; border:1px solid var(--line); background:#000; }
+  .col--real img { opacity:0.94; }
+  .col--ours img { border-color:var(--gold); }
+
+  figcaption { font-size:0.82rem; color:var(--stone); line-height:1.45; }
+  .label {
+    display:inline-block; font-size:0.58rem; letter-spacing:0.18em; text-transform:uppercase;
+    border:1px solid var(--line); padding:0.22rem 0.45rem; margin-right:0.5rem; color:#5d564a;
+  }
+  .label--ours { color:var(--gold-deep); border-color:var(--gold); }
+  .label--real { color:#4a463f; }
+  .credit { display:block; margin-top:0.35rem; font-size:0.68rem; color:#9c9587; }
+  .credit a { color:#9c9587; }
+
+  /* Label and text in two aligned columns, so the paragraph does not wrap back
+     underneath its own label. */
+  .notes { margin-top:1.2rem; max-width:82ch; display:flex; flex-direction:column; gap:0.55rem; }
+  .notes p {
+    margin:0; color:#4a463f; font-size:0.95rem;
+    display:grid; grid-template-columns:1fr; gap:0.15rem;
+  }
+  @media (min-width:640px) {
+    .notes p { grid-template-columns:9rem 1fr; gap:0 1.2rem; align-items:baseline; }
+  }
+  .k {
+    font-size:0.62rem; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--gold-deep); padding-top:0.28rem;
+  }
+
+  footer.close { border-top:1px solid var(--line); padding-top:2.2rem; max-width:64ch; }
+  footer.close h2 {
+    font-family:"Playfair Display",ui-serif,Georgia,serif; font-weight:400;
+    font-size:1.45rem; margin:0 0 0.9rem; color:var(--onyx);
+  }
+  footer.close p { margin:0 0 0.8rem; color:#4a463f; }
+  .sig { margin-top:1.6rem; font-size:0.9rem; color:var(--stone); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <p class="mark">DOORS</p>
+    <h1>A small change to the property images, and a question for you.</h1>
+    <p class="lede">
+      Thank you for the six renders. They are beautiful, and the houses in them are exactly right
+      for what DOORS represents.
+    </p>
+    <p class="lede">
+      One thing gave us pause. The landscapes around the houses were not quite the Garden Route.
+      There was lavender and oak where the Outeniquas should be, palm trees on the Pezula ridge,
+      and a headland at Mossel Bay that belonged somewhere warmer and drier. Anyone who lives here
+      would notice, and the whole promise of DOORS is that it knows this coast.
+    </p>
+    <p class="lede">
+      So we have adjusted each image. <strong>The houses are untouched.</strong> Only the landscape
+      around them has changed, to the plants, rock, water and light that are actually there. Each
+      one below sits beside a real photograph of the place, so you can judge it for yourself.
+    </p>
+
+    <div class="ask">
+      <h2>What we would like from you</h2>
+      <p>
+        Simply whether you are happy with the adjusted versions, or would rather we use yours as
+        they were. It is entirely your call, and either is fine with us.
+      </p>
+      <p>
+        You can also mix them, property by property. Just reply with the ones you want changed and
+        the ones you want left alone.
+      </p>
+    </div>
+  </header>
+
+  <main>
+    <article class="prop">
+      <h2>George Mountain Retreat</h2>
+      <div class="row">
+        <figure class="col col--real">
+          <img src="img/dr-098-george-mountain-retreat-real.jpg" alt="The Outeniqua range above George" loading="lazy" />
+          <figcaption>
+            <span class="label label--real">The place</span>
+            The Outeniqua range above George
+            <span class="credit">Photograph: Bob Adams from Amanzimtoti, South Africa, CC BY-SA 2.0, via <a href="https://commons.wikimedia.org/wiki/File:Outeniqua_mountains_(15888233442).jpg">Wikimedia Commons</a></span>
+          </figcaption>
+        </figure>
+        <figure class="col">
+          <img src="img/dr-098-george-mountain-retreat-theirs.jpg" alt="George Mountain Retreat, the original render" loading="lazy" />
+          <figcaption><span class="label">As sent</span>Your render</figcaption>
+        </figure>
+        <figure class="col col--ours">
+          <img src="img/dr-098-george-mountain-retreat-ours.jpg" alt="George Mountain Retreat, adjusted to the Garden Route" loading="lazy" />
+          <figcaption><span class="label label--ours">Adjusted</span>Same house, local landscape</figcaption>
+        </figure>
+      </div>
+      <div class="notes">
+        <p><span class="k">What changed</span>The lavender beds, oak trees and dry golden hills have gone. The range behind the house is now the Outeniquas as they actually stand above George: a long rugged ridgeline, green grass and fynbos on the lower slopes, a dark belt of forest at the foot, big open sky.</p>
+        <p><span class="k">What stayed</span>The house, the water channel, the paving and the planting beds are exactly as you sent them. The sky is clearer than in your version, because that is how the range reads on an ordinary good day here.</p>
+      </div>
+    </article>
+
+    <article class="prop">
+      <h2>Pezula Ridge Residence</h2>
+      <div class="row">
+        <figure class="col col--real">
+          <img src="img/dr-156-pezula-ridge-residence-real.jpg" alt="The coast below Pezula, Knysna" loading="lazy" />
+          <figcaption>
+            <span class="label label--real">The place</span>
+            The coast below Pezula, Knysna
+            <span class="credit">Photograph: Ad Meskens, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:Knysna_Heads_09.jpg">Wikimedia Commons</a></span>
+          </figcaption>
+        </figure>
+        <figure class="col">
+          <img src="img/dr-156-pezula-ridge-residence-theirs.jpg" alt="Pezula Ridge Residence, the original render" loading="lazy" />
+          <figcaption><span class="label">As sent</span>Your render</figcaption>
+        </figure>
+        <figure class="col col--ours">
+          <img src="img/dr-156-pezula-ridge-residence-ours.jpg" alt="Pezula Ridge Residence, adjusted to the Garden Route" loading="lazy" />
+          <figcaption><span class="label label--ours">Adjusted</span>Same house, local landscape</figcaption>
+        </figure>
+      </div>
+      <div class="notes">
+        <p><span class="k">What changed</span>The palm trees have gone and the ridge is planted the way that ridge really is, in fynbos, proteas and restios running down to the sea.</p>
+        <p><span class="k">What stayed</span>The house, the terracing, the pool and your sunset are unchanged.</p>
+      </div>
+    </article>
+
+    <article class="prop">
+      <h2>Mossel Bay Cliff House</h2>
+      <div class="row">
+        <figure class="col col--real">
+          <img src="img/dr-141-mossel-bay-cliff-house-real.jpg" alt="The coast at Pinnacle Point, Mossel Bay" loading="lazy" />
+          <figcaption>
+            <span class="label label--real">The place</span>
+            The coast at Pinnacle Point, Mossel Bay
+            <span class="credit">Photograph: Satdeep Gill, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:A_view_from_Pinnacle_Point,_Mossel_Bay,_South_Africa.jpg">Wikimedia Commons</a></span>
+          </figcaption>
+        </figure>
+        <figure class="col">
+          <img src="img/dr-141-mossel-bay-cliff-house-theirs.jpg" alt="Mossel Bay Cliff House, the original render" loading="lazy" />
+          <figcaption><span class="label">As sent</span>Your render</figcaption>
+        </figure>
+        <figure class="col col--ours">
+          <img src="img/dr-141-mossel-bay-cliff-house-ours.jpg" alt="Mossel Bay Cliff House, adjusted to the Garden Route" loading="lazy" />
+          <figcaption><span class="label label--ours">Adjusted</span>Same house, local landscape</figcaption>
+        </figure>
+      </div>
+      <div class="notes">
+        <p><span class="k">What changed</span>The desert succulents and pale headland are replaced by the darker rocky shoreline and low coastal scrub you actually find along that cliff.</p>
+        <p><span class="k">What stayed</span>The house, the pool, the driveway and the clear blue day are unchanged.</p>
+      </div>
+    </article>
+
+    <article class="prop">
+      <h2>Knysna Headlands Estate</h2>
+      <div class="row">
+        <figure class="col col--real">
+          <img src="img/dr-204-knysna-headlands-estate-real.jpg" alt="The Knysna Heads" loading="lazy" />
+          <figcaption>
+            <span class="label label--real">The place</span>
+            The Knysna Heads
+            <span class="credit">Photograph: Ad Meskens, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:Knysna_Heads_01.jpg">Wikimedia Commons</a></span>
+          </figcaption>
+        </figure>
+        <figure class="col">
+          <img src="img/dr-204-knysna-headlands-estate-theirs.jpg" alt="Knysna Headlands Estate, the original render" loading="lazy" />
+          <figcaption><span class="label">As sent</span>Your render</figcaption>
+        </figure>
+        <figure class="col col--ours">
+          <img src="img/dr-204-knysna-headlands-estate-ours.jpg" alt="Knysna Headlands Estate, adjusted to the Garden Route" loading="lazy" />
+          <figcaption><span class="label label--ours">Adjusted</span>Same house, local landscape</figcaption>
+        </figure>
+      </div>
+      <div class="notes">
+        <p><span class="k">What changed</span>The gum trees have gone. The slope is now dense indigenous forest falling to sandstone cliffs at the lagoon mouth.</p>
+        <p><span class="k">What stayed</span>The house, the pool, the steps and the lower suite are unchanged.</p>
+      </div>
+    </article>
+
+    <article class="prop">
+      <h2>Wilderness Dune Residence</h2>
+      <div class="row">
+        <figure class="col col--real">
+          <img src="img/dr-063-wilderness-dune-residence-real.jpg" alt="Wilderness beach from the pass" loading="lazy" />
+          <figcaption>
+            <span class="label label--real">The place</span>
+            Wilderness beach from the pass
+            <span class="credit">Photograph: ilf_, CC0, via <a href="https://commons.wikimedia.org/wiki/File:Wilderness_(27185222988).jpg">Wikimedia Commons</a></span>
+          </figcaption>
+        </figure>
+        <figure class="col">
+          <img src="img/dr-063-wilderness-dune-residence-theirs.jpg" alt="Wilderness Dune Residence, the original render" loading="lazy" />
+          <figcaption><span class="label">As sent</span>Your render</figcaption>
+        </figure>
+        <figure class="col col--ours">
+          <img src="img/dr-063-wilderness-dune-residence-ours.jpg" alt="Wilderness Dune Residence, adjusted to the Garden Route" loading="lazy" />
+          <figcaption><span class="label label--ours">Adjusted</span>Same house, local landscape</figcaption>
+        </figure>
+      </div>
+      <div class="notes">
+        <p><span class="k">What changed</span>The planting is now vegetated dune and dune grass, with the long straight Wilderness beach running away below.</p>
+        <p><span class="k">What stayed</span>Almost everything. This one was already close, so it is the smallest change of the six.</p>
+      </div>
+    </article>
+
+    <article class="prop">
+      <h2>Plettenberg Beachfront</h2>
+      <div class="row">
+        <figure class="col col--real">
+          <img src="img/dr-187-plettenberg-beachfront-real.jpg" alt="Plettenberg Bay" loading="lazy" />
+          <figcaption>
+            <span class="label label--real">The place</span>
+            Plettenberg Bay
+            <span class="credit">Photograph: Ad Meskens, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:Plettenberg_Bay_Beach_02.jpg">Wikimedia Commons</a></span>
+          </figcaption>
+        </figure>
+        <figure class="col">
+          <img src="img/dr-187-plettenberg-beachfront-theirs.jpg" alt="Plettenberg Beachfront, the original render" loading="lazy" />
+          <figcaption><span class="label">As sent</span>Your render</figcaption>
+        </figure>
+        <figure class="col col--ours">
+          <img src="img/dr-187-plettenberg-beachfront-ours.jpg" alt="Plettenberg Beachfront, adjusted to the Garden Route" loading="lazy" />
+          <figcaption><span class="label label--ours">Adjusted</span>Same house, local landscape</figcaption>
+        </figure>
+      </div>
+      <div class="notes">
+        <p><span class="k">What changed</span>The arid Mediterranean coastline is now the Plettenberg sweep, with green Tsitsikamma behind it rather than dry brown hills.</p>
+        <p><span class="k">What stayed</span>The house and the terrace are the same, though the framing has opened up a little more than the others. This is the one we would most like your eye on.</p>
+      </div>
+    </article>
+  </main>
+
+  <footer class="close">
+    <h2>One last note</h2>
+    <p>
+      None of this is a criticism of the renders. The likeliest explanation is simply that the brief
+      they were made from never named the landscape, and image tools left to their own devices
+      default to California almost every time.
+    </p>
+    <p>
+      Nothing is on the website yet. Once you tell us which set you would like, we will load them
+      and you can see them in place.
+    </p>
+    <p class="sig">Tarryn &middot; LAUNCHT</p>
+  </footer>
+
+</div>
+</body>
+</html>
