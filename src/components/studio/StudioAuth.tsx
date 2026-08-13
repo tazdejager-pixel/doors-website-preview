@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
+import { Wordmark } from '@/components/doors/Wordmark';
 
 const StudioAuth: React.FC<{ notTeam?: boolean }> = ({ notTeam }) => {
   const { signIn, signOut, user } = useAuth();
@@ -22,7 +23,7 @@ const StudioAuth: React.FC<{ notTeam?: boolean }> = ({ notTeam }) => {
     <div className="min-h-screen bg-[#1F1F1F] text-[#F8F6F3] flex flex-col">
       <header className="border-b border-[#F8F6F3]/10">
         <div className="max-w-[1200px] mx-auto px-6 sm:px-10 py-6 flex items-center justify-between">
-          <Link to="/" className="font-serif tracking-[0.45em] text-xl">DOORS</Link>
+          <Link to="/" aria-label="DOORS home"><Wordmark tone="ivory" size="md" /></Link>
           <span className="text-[10px] tracking-[0.25em] uppercase text-[#C9A961]">Private Engine</span>
         </div>
       </header>

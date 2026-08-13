@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { useAuth } from '@/contexts/AuthContext';
 import { engine, Overview } from '@/lib/engineApi';
 import StudioAuth from '@/components/studio/StudioAuth';
+import { Wordmark } from '@/components/doors/Wordmark';
 import ListingsTab from '@/components/studio/ListingsTab';
 import BuyersTab from '@/components/studio/BuyersTab';
 import PipelineTab from '@/components/studio/PipelineTab';
@@ -56,7 +57,7 @@ const Studio: React.FC = () => {
       {/* Sidebar */}
       <aside className="w-60 shrink-0 border-r border-[#F8F6F3]/10 hidden md:flex flex-col">
         <div className="px-6 py-6 border-b border-[#F8F6F3]/10">
-          <Link to="/" className="font-serif tracking-[0.4em] text-lg">DOORS</Link>
+          <Link to="/" aria-label="DOORS home"><Wordmark tone="ivory" size="sm" /></Link>
           <p className="text-[9px] tracking-[0.25em] uppercase text-[#C9A961] mt-1">Private Engine</p>
         </div>
         <nav className="flex-1 py-4">

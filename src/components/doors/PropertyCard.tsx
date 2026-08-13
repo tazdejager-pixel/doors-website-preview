@@ -23,9 +23,14 @@ const PropertyCard: React.FC<Props> = ({ property, onView }) => {
             Film
           </div>
         )}
+        {property.isShowcase && (
+          <div className="absolute top-4 right-4 bg-[#1d1d1d]/75 backdrop-blur-sm border border-[#C9A961]/50 px-3 py-1.5 text-[#C9A961] text-[9px] tracking-[0.2em] uppercase">
+            Architectural Showcase
+          </div>
+        )}
         <div className="absolute inset-0 bg-[#2C2C2C]/0 group-hover:bg-[#2C2C2C]/30 transition-colors duration-500 flex items-center justify-center">
           <span className="opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500 text-[11px] tracking-[0.2em] uppercase text-[#F8F6F3] border border-[#F8F6F3]/70 px-7 py-3.5">
-            View privately
+            {property.isShowcase ? 'View the work' : 'View privately'}
           </span>
         </div>
       </div>
@@ -38,11 +43,17 @@ const PropertyCard: React.FC<Props> = ({ property, onView }) => {
         <h3 className="font-serif text-2xl text-[#2C2C2C] leading-snug">{property.title}</h3>
         <p className="text-[#2C2C2C]/50 text-sm font-light leading-relaxed mt-3">{property.summary}</p>
         <div className="flex items-center gap-5 mt-5 pt-5 border-t border-[#2C2C2C]/10 text-[#2C2C2C]/60 text-xs tracking-wide">
-          <span>{property.priceBand}</span>
-          <span className="w-px h-3 bg-[#2C2C2C]/15" />
-          <span>{property.bedrooms} bed</span>
-          <span className="w-px h-3 bg-[#2C2C2C]/15" />
-          <span>{property.sizeSqm} m²</span>
+          {property.isShowcase ? (
+            <span className="italic text-[#2C2C2C]/45">Not a listing - an illustration of the work</span>
+          ) : (
+            <>
+              <span>{property.priceBand}</span>
+              <span className="w-px h-3 bg-[#2C2C2C]/15" />
+              <span>{property.bedrooms} bed</span>
+              <span className="w-px h-3 bg-[#2C2C2C]/15" />
+              <span>{property.sizeSqm} m²</span>
+            </>
+          )}
         </div>
       </div>
     </button>

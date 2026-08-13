@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { captureLead } from '@/lib/leads';
 import { budgetBands, areas, HERO_IMG } from '@/lib/doorsData';
+import { Wordmark, BrandName } from '@/components/doors/Wordmark';
 
 const inputClass =
   'w-full bg-transparent border-b border-[#2C2C2C]/20 py-3 text-[#2C2C2C] placeholder-[#2C2C2C]/40 focus:border-[#C9A961] focus:outline-none transition-colors text-sm';
@@ -14,7 +15,8 @@ const Register: React.FC = () => {
   const [budget, setBudget] = useState('');
   const [area, setArea] = useState('');
   const [message, setMessage] = useState('');
-  const [smsOptIn, setSmsOptIn] = useState(true);
+  // POPIA: explicit consent, never pre-ticked.
+  const [consent, setConsent] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState(false);
   const [error, setError] = useState('');
@@ -23,6 +25,10 @@ const Register: React.FC = () => {
     e.preventDefault();
     if (!name || !email) {
       setError('Please share your name and email.');
+      return;
+    }
+    if (!consent) {
+      setError('Please confirm we may contact you about your registration.');
       return;
     }
     setSubmitting(true);
@@ -36,6 +42,7 @@ const Register: React.FC = () => {
       budget_band: kind === 'buyer' ? budget : null,
       area_interest: kind === 'buyer' ? area : null,
       source: kind === 'buyer' ? 'buyer-register-page' : 'seller-register-page',
+      contact_consent: consent,
     });
     setSubmitting(false);
     if (leadError) {
@@ -51,7 +58,7 @@ const Register: React.FC = () => {
         <img src={HERO_IMG} alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#2C2C2C]/55" />
         <div className="relative h-full flex flex-col justify-between p-12">
-          <Link to="/" className="font-serif tracking-[0.45em] text-2xl text-[#F8F6F3]">DOORS</Link>
+          <Link to="/" aria-label="DOORS home"><Wordmark tone="ivory" size="lg" /></Link>
           <div>
             <p className="text-[#C9A961] text-[11px] tracking-[0.3em] uppercase mb-5">By Private Introduction</p>
             <h2 className="font-serif text-5xl text-[#F8F6F3] font-light leading-tight">
@@ -66,7 +73,7 @@ const Register: React.FC = () => {
 
       <div className="flex flex-col">
         <div className="lg:hidden p-6">
-          <Link to="/" className="font-serif tracking-[0.45em] text-xl text-[#2C2C2C]">DOORS</Link>
+          <Link to="/" aria-label="DOORS home"><Wordmark tone="onyx" size="md" /></Link>
         </div>
         <div className="flex-1 flex items-center justify-center px-6 sm:px-12 py-12">
           <div className="w-full max-w-md">
@@ -75,8 +82,8 @@ const Register: React.FC = () => {
                 <p className="text-[#C9A961] text-xs tracking-[0.25em] uppercase mb-5">Received</p>
                 <h1 className="font-serif text-4xl text-[#2C2C2C] mb-4">Thank you.</h1>
                 <p className="text-[#2C2C2C]/60 text-sm leading-relaxed mb-8">
-                  Your registration has reached us privately. A member of the DOORS circle will be in touch
-                  personally and in confidence.
+                  Your registration has reached us privately. A member of the <BrandName /> circle will be
+                  in touch personally and in confidence.
                 </p>
                 <Link to="/" className="text-xs tracking-[0.2em] uppercase text-[#2C2C2C] border-b border-[#C9A961] pb-1 hover:text-[#C9A961]">
                   Return home
@@ -84,7 +91,9 @@ const Register: React.FC = () => {
               </div>
             ) : (
               <>
-                <h1 className="font-serif text-4xl text-[#2C2C2C] mb-3">Register with DOORS</h1>
+                <h1 className="font-serif text-4xl text-[#2C2C2C] mb-3">
+                  Register with <BrandName />
+                </h1>
                 <p className="text-[#2C2C2C]/55 text-sm leading-relaxed mb-8">
                   Tell us whether you are looking, or considering a sale. We do the rest, quietly.
                 </p>
@@ -130,8 +139,13 @@ const Register: React.FC = () => {
                   />
 
                   <label className="flex items-start gap-3 text-xs text-[#2C2C2C]/55 leading-relaxed cursor-pointer">
-                    <input type="checkbox" checked={smsOptIn} onChange={(e) => setSmsOptIn(e.target.checked)} className="mt-0.5 accent-[#C9A961]" />
-                    <span>Text me updates. Msg &amp; data rates may apply. Reply STOP to unsubscribe.</span>
+                    <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 accent-[#C9A961]" />
+                    <span>
+                      I consent to <BrandName /> contacting me about this registration and holding my
+                      details for that purpose, in line with POPIA and the{' '}
+                      <Link to="/legal" target="_blank" className="border-b border-[#C9A961] text-[#2C2C2C]">privacy notice</Link>.
+                      You may ask us to remove your details at any time.
+                    </span>
                   </label>
 
                   {error && <p className="text-red-700/80 text-xs">{error}</p>}

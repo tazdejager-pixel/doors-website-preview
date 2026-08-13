@@ -49,6 +49,36 @@ export const Wordmark: React.FC<WordmarkProps> = ({
   );
 };
 
+// Wordmark only, tagline cropped out. Used inline inside a sentence, where the
+// full lockup's strapline would be unreadable and would break the line.
+const inlineLogoForTone: Record<string, string> = {
+  ivory: 'logo/doors-wordmark-white.svg',
+  onyx: 'logo/doors-wordmark-black.svg',
+  gold: 'logo/doors-wordmark-gold.svg',
+};
+
+/**
+ * The brand name as it appears INSIDE running text - "BrandName began with a
+ * simple conviction". Client request 28/07/2026: wherever the name appears as
+ * written text, show the logo instead. She circled a body-copy sentence, so this
+ * has to sit in the line of type, not just in headers.
+ *
+ * Rendered at cap height and nudged onto the baseline so the sentence still
+ * reads as a sentence. The accessible name stays "DOORS", so screen readers,
+ * search engines and copy-paste all still get the word.
+ */
+export const BrandName: React.FC<{ tone?: 'ivory' | 'onyx' | 'gold'; className?: string }> = ({
+  tone = 'onyx',
+  className = '',
+}) => (
+  <img
+    src={`${import.meta.env.BASE_URL}${inlineLogoForTone[tone]}`}
+    alt="DOORS"
+    className={`inline-block w-auto align-baseline ${className}`}
+    style={{ height: '0.78em', transform: 'translateY(0.04em)' }}
+  />
+);
+
 /**
  * The nested-arch doorway device - a secondary brand mark used as a quiet
  * ornament between sections or beside small labels.
