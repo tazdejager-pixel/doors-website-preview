@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { captureLead } from '@/lib/leads';
 import { budgetBands, areas } from '@/lib/doorsData';
-import { Wordmark } from './Wordmark';
+import { Wordmark, BrandName } from './Wordmark';
 
 interface Props {
   open: boolean;
@@ -96,8 +96,8 @@ const EnquiryModal: React.FC<Props> = ({ open, onClose, kind, propertyRef, prope
               <p className="text-[#C9A961] text-xs tracking-[0.25em] uppercase mb-5">Received</p>
               <h3 className="font-serif text-3xl text-[#2C2C2C] mb-4">Thank you.</h3>
               <p className="text-[#2C2C2C]/60 text-sm leading-relaxed max-w-sm mx-auto">
-                Your enquiry has reached us privately. Chris, or a member of the DOORS circle, will be in
-                touch personally - discreetly, and in your own time.
+                Your enquiry has reached us privately. Chris, or a member of the <BrandName /> circle, will
+                be in touch personally - discreetly, and in your own time.
               </p>
               <button
                 onClick={onClose}
@@ -172,8 +172,8 @@ const EnquiryModal: React.FC<Props> = ({ open, onClose, kind, propertyRef, prope
                     className="mt-0.5 accent-[#C9A961]"
                   />
                   <span>
-                    I consent to DOORS contacting me about this enquiry and holding my details for that
-                    purpose, in line with POPIA and the{' '}
+                    I consent to <BrandName /> contacting me about this enquiry and holding my details for
+                    that purpose, in line with POPIA and the{' '}
                     <a href={`${import.meta.env.BASE_URL}legal`} target="_blank" rel="noopener" className="border-b border-[#C9A961] text-[#2C2C2C]">
                       privacy notice
                     </a>

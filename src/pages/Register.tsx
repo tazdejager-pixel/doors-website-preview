@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { captureLead } from '@/lib/leads';
 import { budgetBands, areas, HERO_IMG } from '@/lib/doorsData';
-import { Wordmark } from '@/components/doors/Wordmark';
+import { Wordmark, BrandName } from '@/components/doors/Wordmark';
 
 const inputClass =
   'w-full bg-transparent border-b border-[#2C2C2C]/20 py-3 text-[#2C2C2C] placeholder-[#2C2C2C]/40 focus:border-[#C9A961] focus:outline-none transition-colors text-sm';
@@ -82,8 +82,8 @@ const Register: React.FC = () => {
                 <p className="text-[#C9A961] text-xs tracking-[0.25em] uppercase mb-5">Received</p>
                 <h1 className="font-serif text-4xl text-[#2C2C2C] mb-4">Thank you.</h1>
                 <p className="text-[#2C2C2C]/60 text-sm leading-relaxed mb-8">
-                  Your registration has reached us privately. A member of the DOORS circle will be in touch
-                  personally and in confidence.
+                  Your registration has reached us privately. A member of the <BrandName /> circle will be
+                  in touch personally and in confidence.
                 </p>
                 <Link to="/" className="text-xs tracking-[0.2em] uppercase text-[#2C2C2C] border-b border-[#C9A961] pb-1 hover:text-[#C9A961]">
                   Return home
@@ -91,7 +91,9 @@ const Register: React.FC = () => {
               </div>
             ) : (
               <>
-                <h1 className="font-serif text-4xl text-[#2C2C2C] mb-3">Register with DOORS</h1>
+                <h1 className="font-serif text-4xl text-[#2C2C2C] mb-3">
+                  Register with <BrandName />
+                </h1>
                 <p className="text-[#2C2C2C]/55 text-sm leading-relaxed mb-8">
                   Tell us whether you are looking, or considering a sale. We do the rest, quietly.
                 </p>
@@ -139,8 +141,8 @@ const Register: React.FC = () => {
                   <label className="flex items-start gap-3 text-xs text-[#2C2C2C]/55 leading-relaxed cursor-pointer">
                     <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} className="mt-0.5 accent-[#C9A961]" />
                     <span>
-                      I consent to DOORS contacting me about this registration and holding my details for
-                      that purpose, in line with POPIA and the{' '}
+                      I consent to <BrandName /> contacting me about this registration and holding my
+                      details for that purpose, in line with POPIA and the{' '}
                       <Link to="/legal" target="_blank" className="border-b border-[#C9A961] text-[#2C2C2C]">privacy notice</Link>.
                       You may ask us to remove your details at any time.
                     </span>

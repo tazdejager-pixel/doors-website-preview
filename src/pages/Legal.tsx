@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Wordmark } from '@/components/doors/Wordmark';
+import { Wordmark, BrandName } from '@/components/doors/Wordmark';
 
 const Legal: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const Legal: React.FC = () => {
           <section>
             <h2 className="font-serif text-2xl text-[#2C2C2C] mb-3">Privacy is our default</h2>
             <p>
-              Discretion is the whole point of DOORS. We collect only what we need to introduce buyers and
+              Discretion is the whole point of <BrandName />. We collect only what we need to introduce buyers and
               sellers properly - your name, contact details, and what you are looking for or considering. We
               never publish addresses or exact prices, and we never sell or share your details with third
               parties for marketing.

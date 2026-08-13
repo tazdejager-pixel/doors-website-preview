@@ -1,5 +1,6 @@
 import React from 'react';
 import Reveal from './Reveal';
+import { BrandName } from './Wordmark';
 
 /**
  * "Our Approach" - an impersonal, faceless statement of the DOORS philosophy.
@@ -18,8 +19,8 @@ const Founder: React.FC = () => {
           </h2>
           <div className="space-y-5 text-[#2C2C2C]/60 text-[15px] sm:text-base font-light leading-relaxed">
             <p>
-              DOORS began with a simple conviction: that the people buying and selling the finest homes on
-              this coast deserve judgement and privacy, not boards and billboards.
+              <BrandName /> began with a simple conviction: that the people buying and selling the finest
+              homes on this coast deserve judgement and privacy, not boards and billboards.
             </p>
             <p>
               We keep the circle small on purpose. We would rather know a handful of buyers and a handful of

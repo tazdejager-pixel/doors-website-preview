@@ -1,5 +1,6 @@
 import React from 'react';
 import Reveal from './Reveal';
+import { BrandName } from './Wordmark';
 
 const Philosophy: React.FC = () => {
   return (
@@ -7,7 +8,9 @@ const Philosophy: React.FC = () => {
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10">
         <Reveal>
           <div className="max-w-3xl mx-auto text-center mb-24 sm:mb-32">
-            <p className="text-[#C9A961] text-[11px] tracking-[0.3em] uppercase mb-7">The DOORS Approach</p>
+            <p className="text-[#C9A961] text-[11px] tracking-[0.3em] uppercase mb-7 flex items-center gap-2">
+              The <BrandName tone="gold" className="!h-[1.35em]" /> Approach
+            </p>
             <h2 className="font-serif text-3xl sm:text-5xl text-[#2C2C2C] font-light leading-[1.2]">
               At the very top of the market, the best homes never reach it.
             </h2>

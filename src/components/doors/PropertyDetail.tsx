@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { DoorsProperty } from '@/lib/doorsData';
+import { BrandName } from './Wordmark';
 
 interface Props {
   property: DoorsProperty | null;
@@ -149,7 +150,7 @@ const PropertyDetail: React.FC<Props> = ({ property, onClose, onRequest }) => {
               </div>
               <p className="text-[#F8F6F3]/60 text-sm font-light leading-relaxed mb-7 max-w-xl">
                 What is shown here is an impression only. The finer detail is shared once you are
-                registered as a buyer within the DOORS circle.
+                registered as a buyer within the <BrandName tone="ivory" /> circle.
               </p>
               <ul className="grid sm:grid-cols-2 gap-y-3 gap-x-8">
                 {held.map((h) => (
