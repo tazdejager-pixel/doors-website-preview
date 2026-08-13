@@ -187,7 +187,7 @@ const Portal: React.FC = () => {
   if (loading) {
     return (
       <div className="min-h-screen bg-[#F8F6F3] flex items-center justify-center">
-        <p className="font-serif text-2xl text-[#2C2C2C]/50 tracking-[0.3em]">DOORS</p>
+        <Wordmark tone="onyx" size="lg" className="opacity-50" />
       </div>
     );
   }

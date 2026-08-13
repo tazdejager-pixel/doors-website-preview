@@ -42,9 +42,27 @@ const Footer: React.FC<Props> = ({ onEnquire }) => {
         </div>
 
 
-        <div className="border-t border-[#F8F6F3]/10 pt-8 flex flex-col sm:flex-row justify-between gap-4 text-[#F8F6F3]/40 text-xs font-light">
-          <p>© {new Date().getFullYear()} Doors (Pty) Ltd. All rights reserved.</p>
-          <p>Prices shown as bands. Homes shown by private introduction only.</p>
+        {/* Statutory footer - wording fixed by C Dreyer 12/08/2026. The PPRA
+            registration and FFC number are a regulatory requirement, not copy.
+            Do not reword or abbreviate. */}
+        <div className="border-t border-[#F8F6F3]/10 pt-8 text-[#F8F6F3]/45 text-xs font-light leading-relaxed">
+          <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6">
+            <div className="space-y-0.5">
+              <p className="text-[#F8F6F3]/60">C DREYER</p>
+              <p>DOORS (PTY) LTD T/A DOORS PROPERTIES</p>
+              <p>REGISTERED WITH THE PPRA - FFC 202614020700000</p>
+              <p>
+                <a href="tel:+27824583334" className="hover:text-[#C9A961] transition-colors">082 458 3334</a>
+                <span className="px-2 text-[#F8F6F3]/25">|</span>
+                <a href="mailto:chris@wildernessaccounting.com" className="hover:text-[#C9A961] transition-colors">chris@wildernessaccounting.com</a>
+              </p>
+            </div>
+
+            <div className="lg:text-right space-y-0.5 text-[#F8F6F3]/35">
+              <p>© {new Date().getFullYear()} Doors (Pty) Ltd. All rights reserved.</p>
+              <p>Prices shown as bands. Homes shown by private introduction only.</p>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

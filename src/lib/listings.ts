@@ -27,6 +27,7 @@ export function mapRow(r: Record<string, any>): DoorsProperty {
     image: resolveImg(r.image_url),
     video: r.video_url ?? undefined,
     character: r.character ?? undefined,
+    isShowcase: r.is_demo === true,
     private: r.discretion_level === 'fully-private',
     exactPrice: r.exact_price ?? undefined,
     address: r.address ?? undefined,

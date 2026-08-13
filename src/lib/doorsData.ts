@@ -9,6 +9,13 @@ export interface DoorsProperty {
   image: string;
   video?: string;
   character?: string[];
+  /**
+   * Architectural showcase, not a live mandate. Drawn from `is_demo` on the
+   * listing row. Showcase homes are labelled as such everywhere they appear and
+   * never invite an enquiry on that specific home - a render is not a property
+   * anyone can be introduced to. Set by C Dreyer 12/08/2026 for PPRA compliance.
+   */
+  isShowcase?: boolean;
   // Unlocked-only detail (visible to registered buyers)
   private?: boolean;        // fully-private; only shown when DOORS introduces it
   exactPrice?: string;      // unlocked
