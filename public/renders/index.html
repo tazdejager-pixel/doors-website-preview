@@ -48,12 +48,11 @@
     font-size:clamp(1.35rem,2.5vw,1.75rem); margin:0 0 1.1rem; color:var(--onyx);
     border-bottom:1px solid var(--line); padding-bottom:0.7rem;
   }
-  .row { display:grid; grid-template-columns:1fr; gap:1rem; }
-  @media (min-width:900px) { .row { grid-template-columns:repeat(3,1fr); } }
+  .row { display:grid; grid-template-columns:1fr; gap:1.1rem; }
+  @media (min-width:820px) { .row { grid-template-columns:1fr 1fr; } }
 
   .col { margin:0; display:flex; flex-direction:column; gap:0.55rem; }
   .col img { display:block; width:100%; height:auto; border:1px solid var(--line); background:#000; }
-  .col--real img { opacity:0.94; }
   .col--ours img { border-color:var(--gold); }
 
   figcaption { font-size:0.82rem; color:var(--stone); line-height:1.45; }
@@ -108,8 +107,7 @@
     </p>
     <p class="lede">
       So we have adjusted each image. <strong>The houses are untouched.</strong> Only the landscape
-      around them has changed, to the plants, rock, water and light that are actually there. Each
-      one below sits beside a real photograph of the place, so you can judge it for yourself.
+      around them has changed, to the plants, rock, water and light that are actually there.
     </p>
 
     <div class="ask">
@@ -129,14 +127,6 @@
     <article class="prop">
       <h2>George Mountain Retreat</h2>
       <div class="row">
-        <figure class="col col--real">
-          <img src="img/dr-098-george-mountain-retreat-real.jpg" alt="The Outeniqua range above George" loading="lazy" />
-          <figcaption>
-            <span class="label label--real">The place</span>
-            The Outeniqua range above George
-            <span class="credit">Photograph: Bob Adams from Amanzimtoti, South Africa, CC BY-SA 2.0, via <a href="https://commons.wikimedia.org/wiki/File:Outeniqua_mountains_(15888233442).jpg">Wikimedia Commons</a></span>
-          </figcaption>
-        </figure>
         <figure class="col">
           <img src="img/dr-098-george-mountain-retreat-theirs.jpg" alt="George Mountain Retreat, the original render" loading="lazy" />
           <figcaption><span class="label">As sent</span>Your render</figcaption>
@@ -155,14 +145,6 @@
     <article class="prop">
       <h2>Pezula Ridge Residence</h2>
       <div class="row">
-        <figure class="col col--real">
-          <img src="img/dr-156-pezula-ridge-residence-real.jpg" alt="The coast below Pezula, Knysna" loading="lazy" />
-          <figcaption>
-            <span class="label label--real">The place</span>
-            The coast below Pezula, Knysna
-            <span class="credit">Photograph: Ad Meskens, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:Knysna_Heads_09.jpg">Wikimedia Commons</a></span>
-          </figcaption>
-        </figure>
         <figure class="col">
           <img src="img/dr-156-pezula-ridge-residence-theirs.jpg" alt="Pezula Ridge Residence, the original render" loading="lazy" />
           <figcaption><span class="label">As sent</span>Your render</figcaption>
@@ -181,14 +163,6 @@
     <article class="prop">
       <h2>Mossel Bay Cliff House</h2>
       <div class="row">
-        <figure class="col col--real">
-          <img src="img/dr-141-mossel-bay-cliff-house-real.jpg" alt="The coast at Pinnacle Point, Mossel Bay" loading="lazy" />
-          <figcaption>
-            <span class="label label--real">The place</span>
-            The coast at Pinnacle Point, Mossel Bay
-            <span class="credit">Photograph: Satdeep Gill, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:A_view_from_Pinnacle_Point,_Mossel_Bay,_South_Africa.jpg">Wikimedia Commons</a></span>
-          </figcaption>
-        </figure>
         <figure class="col">
           <img src="img/dr-141-mossel-bay-cliff-house-theirs.jpg" alt="Mossel Bay Cliff House, the original render" loading="lazy" />
           <figcaption><span class="label">As sent</span>Your render</figcaption>
@@ -207,14 +181,6 @@
     <article class="prop">
       <h2>Knysna Headlands Estate</h2>
       <div class="row">
-        <figure class="col col--real">
-          <img src="img/dr-204-knysna-headlands-estate-real.jpg" alt="The Knysna Heads" loading="lazy" />
-          <figcaption>
-            <span class="label label--real">The place</span>
-            The Knysna Heads
-            <span class="credit">Photograph: Ad Meskens, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:Knysna_Heads_01.jpg">Wikimedia Commons</a></span>
-          </figcaption>
-        </figure>
         <figure class="col">
           <img src="img/dr-204-knysna-headlands-estate-theirs.jpg" alt="Knysna Headlands Estate, the original render" loading="lazy" />
           <figcaption><span class="label">As sent</span>Your render</figcaption>
@@ -225,7 +191,7 @@
         </figure>
       </div>
       <div class="notes">
-        <p><span class="k">What changed</span>The gum trees have gone. The slope is now dense indigenous forest falling to sandstone cliffs at the lagoon mouth.</p>
+        <p><span class="k">What changed</span>The gum trees have gone and the slope is now dense indigenous forest falling to sandstone cliffs. The water is the bigger correction: the channel at the Heads is far wider than the first version had it, so the bay now opens out properly with the lagoon and the mountains beyond.</p>
         <p><span class="k">What stayed</span>The house, the pool, the steps and the lower suite are unchanged.</p>
       </div>
     </article>
@@ -233,14 +199,6 @@
     <article class="prop">
       <h2>Wilderness Dune Residence</h2>
       <div class="row">
-        <figure class="col col--real">
-          <img src="img/dr-063-wilderness-dune-residence-real.jpg" alt="Wilderness beach from the pass" loading="lazy" />
-          <figcaption>
-            <span class="label label--real">The place</span>
-            Wilderness beach from the pass
-            <span class="credit">Photograph: ilf_, CC0, via <a href="https://commons.wikimedia.org/wiki/File:Wilderness_(27185222988).jpg">Wikimedia Commons</a></span>
-          </figcaption>
-        </figure>
         <figure class="col">
           <img src="img/dr-063-wilderness-dune-residence-theirs.jpg" alt="Wilderness Dune Residence, the original render" loading="lazy" />
           <figcaption><span class="label">As sent</span>Your render</figcaption>
@@ -259,14 +217,6 @@
     <article class="prop">
       <h2>Plettenberg Beachfront</h2>
       <div class="row">
-        <figure class="col col--real">
-          <img src="img/dr-187-plettenberg-beachfront-real.jpg" alt="Robberg across Plettenberg Bay" loading="lazy" />
-          <figcaption>
-            <span class="label label--real">The place</span>
-            Robberg across Plettenberg Bay
-            <span class="credit">Photograph: Ad Meskens, CC BY-SA 4.0, via <a href="https://commons.wikimedia.org/wiki/File:Plettenberg_Bay_Beach_11.jpg">Wikimedia Commons</a></span>
-          </figcaption>
-        </figure>
         <figure class="col">
           <img src="img/dr-187-plettenberg-beachfront-theirs.jpg" alt="Plettenberg Beachfront, the original render" loading="lazy" />
           <figcaption><span class="label">As sent</span>Your render</figcaption>
