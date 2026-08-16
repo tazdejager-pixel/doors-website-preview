@@ -33,23 +33,37 @@ const StudioAuth: React.FC<{ notTeam?: boolean }> = ({ notTeam }) => {
           <p className="text-[#C9A961] text-[11px] tracking-[0.3em] uppercase mb-4 text-center">For the DOORS Team</p>
 
           {notTeam ? (
+            // A buyer who reaches /studio is not doing anything wrong - the engine is
+            // simply not their side of the house. This used to read as a refusal and
+            // offered only Sign out or Return home, which left a registered buyer at a
+            // dead end on a page that told them off. Their own portal is now the primary
+            // action.
             <div className="text-center">
-              <h1 className="font-serif text-3xl font-light mb-4">Not on the team</h1>
-              <p className="text-[#F8F6F3]/55 text-sm leading-relaxed mb-8">
-                This account ({user?.email}) is not part of the DOORS private engine. Team access is
-                arranged internally by the founder.
+              <h1 className="font-serif text-3xl font-light mb-4">This is the team side</h1>
+              <p className="text-[#F8F6F3]/70 text-sm leading-relaxed mb-8">
+                {user?.email} is registered as a buyer, so the private engine is not where
+                you belong - your own portal is, and the full collection is waiting there.
               </p>
-              <button
-                onClick={() => signOut()}
-                className="text-xs tracking-[0.18em] uppercase text-[#C9A961] hover:text-[#F8F6F3]"
+              <Link
+                to="/portal"
+                className="block w-full bg-[#C9A961] text-[#1F1F1F] py-3 text-xs tracking-[0.22em] uppercase font-medium hover:bg-[#d8b977]"
               >
-                Sign out
-              </button>
-              <div className="mt-4">
+                Go to your portal
+              </Link>
+              <div className="mt-6 flex items-center justify-center gap-6">
                 <Link to="/" className="text-xs tracking-[0.18em] uppercase text-[#F8F6F3]/40 hover:text-[#F8F6F3]">
                   Return home
                 </Link>
+                <button
+                  onClick={() => signOut()}
+                  className="text-xs tracking-[0.18em] uppercase text-[#F8F6F3]/40 hover:text-[#F8F6F3]"
+                >
+                  Sign out
+                </button>
               </div>
+              <p className="text-[#F8F6F3]/40 text-[11px] leading-relaxed mt-8">
+                Team accounts are arranged internally by DOORS.
+              </p>
             </div>
           ) : (
             <>
