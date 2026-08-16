@@ -242,6 +242,10 @@ export const collection: DoorsProperty[] = [
 export const HERO_IMG = `${import.meta.env.BASE_URL}images/hero-cliff-villa.jpg`;
 export const REGION_IMG = `${import.meta.env.BASE_URL}images/garden-route-fynbos-coastline.jpg`;
 export const COLLECTION_IMG = `${import.meta.env.BASE_URL}images/bluehour-home-dusk.jpg`;
+// For Sellers. A home glimpsed from the end of its own drive rather than put on
+// show, which is the section's argument - replaced the flat coastal landscape
+// that sat here, per client feedback 16/08/2026.
+export const SELLERS_IMG = `${import.meta.env.BASE_URL}images/private-home-dusk-drive.jpg`;
 
 // Publicly-visible collection (excludes fully-private homes)
 export const publicCollection = collection.filter((p) => !p.private);
