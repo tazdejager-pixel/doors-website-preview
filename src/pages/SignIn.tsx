@@ -66,7 +66,7 @@ const SignIn: React.FC = () => {
 
       <div className="relative w-full max-w-md">
         <div className="flex justify-center mb-12">
-          <Link to="/"><Wordmark tone="ivory" size="lg" /></Link>
+          <Link to="/"><Wordmark tone="gold" size="xl" /></Link>
         </div>
 
         <div className="text-center mb-10">

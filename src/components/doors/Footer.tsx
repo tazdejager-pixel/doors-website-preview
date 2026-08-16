@@ -12,7 +12,7 @@ const Footer: React.FC<Props> = ({ onEnquire }) => {
       <div className="max-w-[1400px] mx-auto px-6 sm:px-10 py-20">
         <div className="grid md:grid-cols-4 gap-12 mb-16">
           <div className="md:col-span-2">
-            <div className="mb-5"><Wordmark tone="ivory" size="md" /></div>
+            <div className="mb-5"><Wordmark tone="gold" size="lg" /></div>
             <p className="text-ivory/55 text-sm font-light leading-relaxed max-w-sm">
               The Key to Extraordinary. A private property brokerage for the Garden Route's most exceptional
               homes - by introduction, never advertised.

@@ -6,7 +6,7 @@ interface WordmarkProps {
   /** retained for API compatibility; no longer used (the mark is the full logo) */
   glyph?: boolean;
   className?: string;
-  size?: 'sm' | 'md' | 'lg';
+  size?: 'sm' | 'md' | 'lg' | 'xl';
 }
 
 const toneMap: Record<string, string> = {
@@ -23,10 +23,16 @@ const logoForTone: Record<string, string> = {
   gold: 'logo/doors-gold.svg',
 };
 
+// The full lockup is 255.67 x 81.95, of which the wordmark alone is the top
+// 61.5 - so the "THE KEY TO EXTRAORDINARY" strip is only the bottom quarter of
+// the height, and the letterforms inside it are a fraction of that again. At the
+// old h-8 the strapline was roughly 8px of band and read as a smudge. These
+// sizes are set so the tagline is legible at every place the lockup is used.
 const heightForSize: Record<string, string> = {
-  sm: 'h-6',
-  md: 'h-8',
-  lg: 'h-10',
+  sm: 'h-8',
+  md: 'h-12',
+  lg: 'h-16',
+  xl: 'h-20',
 };
 
 /**

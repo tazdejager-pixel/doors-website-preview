@@ -55,7 +55,7 @@ const PortalAuth: React.FC = () => {
         <img src={HERO_IMG} alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#2C2C2C]/55" />
         <div className="relative h-full flex flex-col justify-between p-12">
-          <Link to="/"><Wordmark tone="ivory" size="md" /></Link>
+          <Link to="/"><Wordmark tone="gold" size="lg" /></Link>
 
           <div>
             <p className="text-[#C9A961] text-[11px] tracking-[0.3em] uppercase mb-5">The Buyer Portal</p>

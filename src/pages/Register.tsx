@@ -58,7 +58,7 @@ const Register: React.FC = () => {
         <img src={HERO_IMG} alt="" className="absolute inset-0 w-full h-full object-cover" />
         <div className="absolute inset-0 bg-[#2C2C2C]/55" />
         <div className="relative h-full flex flex-col justify-between p-12">
-          <Link to="/" aria-label="DOORS home"><Wordmark tone="ivory" size="lg" /></Link>
+          <Link to="/" aria-label="DOORS home"><Wordmark tone="gold" size="xl" /></Link>
           <div>
             <p className="text-[#C9A961] text-[11px] tracking-[0.3em] uppercase mb-5">By Private Introduction</p>
             <h2 className="font-serif text-5xl text-[#F8F6F3] font-light leading-tight">
