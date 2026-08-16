@@ -57,13 +57,17 @@ const Sellers: React.FC<Props> = ({ onSeller }) => {
           </Reveal>
 
           <Reveal delay={120}>
-            <div className="relative">
+            {/* Cut to the shape of the DOORS arch - straight sides, semicircular
+                head - with a hairline gold edge, so the image reads as a doorway
+                onto the home rather than a rectangle dropped on the panel. The
+                arch springs from half the image width, which is the proportion of
+                the arch in the brand mark. */}
+            <div className="relative w-full aspect-[4/5] overflow-hidden rounded-t-full border border-[#C9A961]/45">
               <img
                 src={SELLERS_IMG}
                 alt="A private Garden Route home at dusk, glimpsed through indigenous trees from the end of its drive"
-                className="w-full aspect-[4/5] object-cover"
+                className="w-full h-full object-cover"
               />
-              <div className="absolute inset-0 ring-1 ring-inset ring-[#F8F6F3]/10" />
             </div>
           </Reveal>
         </div>
