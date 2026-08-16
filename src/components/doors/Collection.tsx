@@ -30,7 +30,7 @@ const Collection: React.FC<Props> = ({ onView }) => {
                 ? 'A few of the homes we quietly represent.'
                 : 'The calibre of home we are built to represent.'}
             </h2>
-            <p className="text-[#2C2C2C]/55 text-base font-light leading-relaxed mt-7">
+            <p className="text-[#2C2C2C]/70 text-base font-light leading-relaxed mt-7">
               {hasMandates
                 ? `Most of what we hold is never published. What appears here is shown without address or
                    price - a short film and a few lines, an impression only. The full collection is shared
@@ -59,7 +59,7 @@ const Collection: React.FC<Props> = ({ onView }) => {
         </div>
 
         <Reveal>
-          <p className="text-center text-[#2C2C2C]/45 text-sm font-light italic mt-20 max-w-xl mx-auto">
+          <p className="text-center text-[#2C2C2C]/60 text-sm font-light italic mt-20 max-w-xl mx-auto">
             {hasMandates
               ? `A number of homes are held entirely in private and never appear here. They are shown only
                  within the registered circle.`

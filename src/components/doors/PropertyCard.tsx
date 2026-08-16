@@ -41,10 +41,10 @@ const PropertyCard: React.FC<Props> = ({ property, onView }) => {
           <p className="text-[#2C2C2C]/40 text-[10px] tracking-[0.2em] uppercase">{property.ref}</p>
         </div>
         <h3 className="font-serif text-2xl text-[#2C2C2C] leading-snug">{property.title}</h3>
-        <p className="text-[#2C2C2C]/50 text-sm font-light leading-relaxed mt-3">{property.summary}</p>
-        <div className="flex items-center gap-5 mt-5 pt-5 border-t border-[#2C2C2C]/10 text-[#2C2C2C]/60 text-xs tracking-wide">
+        <p className="text-[#2C2C2C]/70 text-sm font-light leading-relaxed mt-3">{property.summary}</p>
+        <div className="flex items-center gap-5 mt-5 pt-5 border-t border-[#2C2C2C]/10 text-[#2C2C2C]/70 text-xs tracking-wide">
           {property.isShowcase ? (
-            <span className="italic text-[#2C2C2C]/45">Not a listing - an illustration of the work</span>
+            <span className="italic text-[#2C2C2C]/60">Not a listing - an illustration of the work</span>
           ) : (
             <>
               <span>{property.priceBand}</span>
