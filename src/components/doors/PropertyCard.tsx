@@ -38,23 +38,23 @@ const PropertyCard: React.FC<Props> = ({ property, onView }) => {
       <div className="pt-6">
         <div className="flex items-center justify-between mb-2">
           <p className="text-[#C9A961] text-[10px] tracking-[0.25em] uppercase">{property.area}</p>
-          <p className="text-[#2C2C2C]/40 text-[10px] tracking-[0.2em] uppercase">{property.ref}</p>
+          <p className="text-[#2C2C2C]/70 text-[10px] tracking-[0.2em] uppercase">{property.ref}</p>
         </div>
         <h3 className="font-serif text-2xl text-[#2C2C2C] leading-snug">{property.title}</h3>
         <p className="text-[#2C2C2C]/70 text-sm font-light leading-relaxed mt-3">{property.summary}</p>
-        <div className="flex items-center gap-5 mt-5 pt-5 border-t border-[#2C2C2C]/10 text-[#2C2C2C]/70 text-xs tracking-wide">
-          {property.isShowcase ? (
-            <span className="italic text-[#2C2C2C]/60">Not a listing - an illustration of the work</span>
-          ) : (
-            <>
-              <span>{property.priceBand}</span>
-              <span className="w-px h-3 bg-[#2C2C2C]/15" />
-              <span>{property.bedrooms} bed</span>
-              <span className="w-px h-3 bg-[#2C2C2C]/15" />
-              <span>{property.sizeSqm} m²</span>
-            </>
-          )}
-        </div>
+        {/* Showcase homes carry no meta row. The "Architectural Showcase" badge on
+            the image is the per-home marker Chris asked for, and the disclaimer is
+            stated once at the end of the section rather than repeated on every
+            card - client direction 16/08/2026. */}
+        {!property.isShowcase && (
+          <div className="flex items-center gap-5 mt-5 pt-5 border-t border-[#2C2C2C]/10 text-[#2C2C2C]/70 text-xs tracking-wide">
+            <span>{property.priceBand}</span>
+            <span className="w-px h-3 bg-[#2C2C2C]/15" />
+            <span>{property.bedrooms} bed</span>
+            <span className="w-px h-3 bg-[#2C2C2C]/15" />
+            <span>{property.sizeSqm} m²</span>
+          </div>
+        )}
       </div>
     </button>
   );

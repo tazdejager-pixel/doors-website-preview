@@ -59,7 +59,7 @@ const Collection: React.FC<Props> = ({ onView }) => {
         </div>
 
         <Reveal>
-          <p className="text-center text-[#2C2C2C]/60 text-sm font-light italic mt-20 max-w-xl mx-auto">
+          <p className="text-center text-[#2C2C2C]/70 text-sm font-light italic mt-20 max-w-xl mx-auto">
             {hasMandates
               ? `A number of homes are held entirely in private and never appear here. They are shown only
                  within the registered circle.`

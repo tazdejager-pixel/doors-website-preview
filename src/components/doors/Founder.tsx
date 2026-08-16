@@ -17,7 +17,7 @@ const Founder: React.FC = () => {
           <h2 className="font-serif text-4xl sm:text-5xl text-[#2C2C2C] font-light leading-[1.15] mb-8">
             A small circle, counselled personally.
           </h2>
-          <div className="space-y-5 text-[#2C2C2C]/60 text-[15px] sm:text-base font-light leading-relaxed">
+          <div className="space-y-5 text-[#2C2C2C]/70 text-[15px] sm:text-base font-light leading-relaxed">
             <p>
               <BrandName /> began with a simple conviction: that the people buying and selling the finest
               homes on this coast deserve judgement and privacy, not boards and billboards.

@@ -81,7 +81,7 @@ const PortalAuth: React.FC = () => {
             <h1 className="font-serif text-4xl text-[#2C2C2C] mb-3">
               {mode === 'signin' ? 'Welcome back.' : 'Create your account.'}
             </h1>
-            <p className="text-[#2C2C2C]/55 text-sm leading-relaxed mb-8">
+            <p className="text-[#2C2C2C]/70 text-sm leading-relaxed mb-8">
               {mode === 'signin'
                 ? 'Sign in to enter the private collection.'
                 : 'A secure account for registered buyers. Already introduced to DOORS? Begin here.'}
@@ -121,7 +121,7 @@ const PortalAuth: React.FC = () => {
                     <option value="">Area of interest (optional)</option>
                     {areas.map((a) => <option key={a} value={a}>{a}</option>)}
                   </select>
-                  <label className="flex items-start gap-3 text-xs text-[#2C2C2C]/55 leading-relaxed cursor-pointer">
+                  <label className="flex items-start gap-3 text-xs text-[#2C2C2C]/70 leading-relaxed cursor-pointer">
                     <input type="checkbox" checked={smsOptIn} onChange={(e) => setSmsOptIn(e.target.checked)} className="mt-0.5 accent-[#C9A961]" />
                     <span>Text me updates. Msg &amp; data rates may apply. Reply STOP to unsubscribe.</span>
                   </label>
@@ -139,7 +139,7 @@ const PortalAuth: React.FC = () => {
               </button>
             </form>
 
-            <p className="text-center text-xs text-[#2C2C2C]/40 mt-8">
+            <p className="text-center text-xs text-[#2C2C2C]/70 mt-8">
               <Link to="/" className="text-[#2C2C2C] border-b border-[#C9A961]">Return home</Link>
             </p>
           </div>

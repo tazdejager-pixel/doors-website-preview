@@ -78,7 +78,7 @@ const EnquiryModal: React.FC<Props> = ({ open, onClose, kind, propertyRef, prope
       <div className="relative w-full max-w-lg bg-[#F8F6F3] max-h-[92vh] overflow-y-auto">
         <button
           onClick={onClose}
-          className="absolute top-5 right-5 text-[#2C2C2C]/50 hover:text-[#2C2C2C] transition-colors"
+          className="absolute top-5 right-5 text-[#2C2C2C]/70 hover:text-[#2C2C2C] transition-colors"
           aria-label="Close"
         >
           <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.2">
@@ -95,7 +95,7 @@ const EnquiryModal: React.FC<Props> = ({ open, onClose, kind, propertyRef, prope
             <div className="text-center py-10">
               <p className="text-[#C9A961] text-xs tracking-[0.25em] uppercase mb-5">Received</p>
               <h3 className="font-serif text-3xl text-[#2C2C2C] mb-4">Thank you.</h3>
-              <p className="text-[#2C2C2C]/60 text-sm leading-relaxed max-w-sm mx-auto">
+              <p className="text-[#2C2C2C]/70 text-sm leading-relaxed max-w-sm mx-auto">
                 Your enquiry has reached us privately. Chris, or a member of the <BrandName /> circle, will
                 be in touch personally - discreetly, and in your own time.
               </p>
@@ -114,7 +114,7 @@ const EnquiryModal: React.FC<Props> = ({ open, onClose, kind, propertyRef, prope
               <h3 className="font-serif text-3xl text-[#2C2C2C] mb-2 leading-tight">
                 {propertyTitle ? 'Request an introduction' : kind === 'buyer' ? 'A private enquiry' : 'A confidential conversation'}
               </h3>
-              <p className="text-[#2C2C2C]/55 text-sm leading-relaxed mb-8">
+              <p className="text-[#2C2C2C]/70 text-sm leading-relaxed mb-8">
                 {propertyTitle
                   ? `Regarding ${propertyTitle}. Nothing is shared without your consent.`
                   : kind === 'buyer'
@@ -164,7 +164,7 @@ const EnquiryModal: React.FC<Props> = ({ open, onClose, kind, propertyRef, prope
                   </label>
                 )}
 
-                <label className="flex items-start gap-3 text-xs text-[#2C2C2C]/55 leading-relaxed cursor-pointer">
+                <label className="flex items-start gap-3 text-xs text-[#2C2C2C]/70 leading-relaxed cursor-pointer">
                   <input
                     type="checkbox"
                     checked={consent}

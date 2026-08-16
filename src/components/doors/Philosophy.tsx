@@ -14,7 +14,7 @@ const Philosophy: React.FC = () => {
             <h2 className="font-serif text-3xl sm:text-5xl text-[#2C2C2C] font-light leading-[1.2]">
               At the very top of the market, the best homes never reach it.
             </h2>
-            <p className="text-[#2C2C2C]/55 text-base sm:text-lg font-light leading-relaxed mt-8">
+            <p className="text-[#2C2C2C]/70 text-base sm:text-lg font-light leading-relaxed mt-8">
               No boards on the verge. No public show days. No address and price for everyone to browse.
               The open market is built for volume. The extraordinary asks for discretion.
             </p>
@@ -43,7 +43,7 @@ const Philosophy: React.FC = () => {
               <div className="text-center md:text-left">
                 <span className="font-serif text-[#C9A961] text-2xl">{item.n}</span>
                 <h3 className="font-serif text-2xl text-[#2C2C2C] mt-4 mb-4">{item.title}</h3>
-                <p className="text-[#2C2C2C]/55 text-[15px] font-light leading-relaxed">{item.body}</p>
+                <p className="text-[#2C2C2C]/70 text-[15px] font-light leading-relaxed">{item.body}</p>
               </div>
             </Reveal>
           ))}
