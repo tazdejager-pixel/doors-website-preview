@@ -60,7 +60,7 @@ const Footer: React.FC<Props> = ({ onEnquire }) => {
 
             <div className="lg:text-right space-y-0.5 text-[#F8F6F3]/35">
               <p>© {new Date().getFullYear()} Doors (Pty) Ltd. All rights reserved.</p>
-              <p>Prices shown as bands. Homes shown by private introduction only.</p>
+              <p>Where a price is shown, it is shown as a band. Homes shown by private introduction only.</p>
             </div>
           </div>
         </div>
