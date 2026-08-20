@@ -1,4 +1,4 @@
-name: Deploy preview to GitHub Pages
+name: Deploy to GitHub Pages
 
 on:
   push:
@@ -24,9 +24,12 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # Base path comes from the repo variable so ONE workflow serves both
+      # deployments: the preview repo sets VITE_BASE=/doors-website-preview/,
+      # the live repo leaves it unset and vite.config falls back to "/".
       - run: npm run build
         env:
-          VITE_BASE: /doors-website-preview/
+          VITE_BASE: ${{ vars.VITE_BASE }}
       # SPA fallback so deep links (/register, /signin) resolve on a static host.
       - run: cp dist/index.html dist/404.html
       - uses: actions/upload-pages-artifact@v3
